@@ -36,6 +36,14 @@ const Nav = () => {
               <FaPinterestP />
             </button>
           </div>
+          <div className="navbar-footer-info">
+            <p className="copyright">
+              &copy; &nbsp;
+              {new Date().getFullYear()}
+              {' '}
+              The Team
+            </p>
+          </div>
 
         </div>
       </div>
