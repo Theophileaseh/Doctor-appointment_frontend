@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoMdArrowDropleft } from 'react-icons/lo';
 // import { Link } from 'react-router-dom';
 import './Nav.css';
 
@@ -21,7 +22,9 @@ const Nav = () => {
       </div>
       <div className="navbar-toggle">
         <div className="navbar-toggler">
-          <button type="button" onClick={() => setSidebar(!sidebar)}>click</button>
+          <button type="button" onClick={() => setSidebar(!sidebar)}>
+          {IoMdArrowDropleft}
+          </button>
         </div>
       </div>
 
