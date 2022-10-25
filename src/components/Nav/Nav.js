@@ -3,12 +3,13 @@ import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { TiSocialGooglePlus } from 'react-icons/ti';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/doctora.png';
-// import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
   const [sidebar, setSidebar] = useState(false);
+  const activeLink = (isActive) => (isActive ? { background: '#98bf0c', color: '#fff' } : undefined);
 
   return (
     <div className={sidebar ? 'navbar active' : 'navbar'}>
@@ -17,7 +18,12 @@ const Nav = () => {
           <img className="logo" src={logo} alt="logo" />
         </div>
         <div className="navbar-main-menu">
-          {/* <NavLink to="/" className="link">Home</NavLink> */}
+          <NavLink to="/" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
+          <NavLink to="/a" style={({ isActive }) => activeLink(isActive)} className="nav-links">Add Reservation</NavLink>
+          <NavLink to="/b" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Reservations</NavLink>
+          <NavLink to="/c" style={({ isActive }) => activeLink(isActive)} className="nav-links">Add Doctor</NavLink>
+          <NavLink to="/d" style={({ isActive }) => activeLink(isActive)} className="nav-links">Remove Doctor</NavLink>
+          <button type="button" className="sign-out">Log out</button>
         </div>
         <div className="navbar-footer">
           <div className="navbar-social">
