@@ -18,7 +18,8 @@
 
 .navbar-menu {
   width: 80%;
-  background: green;
+  background: #1c1c1c12;
+  border-right: 2px solid gainsboro;
 }
 
 .navbar-menu-logo {
@@ -30,6 +31,25 @@
   width: 20%;
 }
 
+.navbar-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-button {
+  background: none;
+  border: none;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  color: #fff;
+}
+
 .navbar-main-menu {
   color: black;
 }
@@ -38,9 +58,23 @@
   background: #98bf0c;
   bottom: 0;
   position: fixed;
-  width: 40px;
+  width: 50px;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  height: 30px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.navbar-social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links {
+  background: none;
+  border: none;
+  color: #5c5959;
   cursor: pointer;
 }

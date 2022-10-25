@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { IoMdArrowDropleft } from 'react-icons/lo';
-// import { Link } from 'react-router-dom';
+import { BiLeftArrow } from 'react-icons/bi';
+import { FaFacebook, FaPinterestP } from 'react-icons/fa';
+import { BsTwitter, BsVimeo } from 'react-icons/bs';
+import { TiSocialGooglePlus } from 'react-icons/ti';
+// import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
@@ -13,17 +16,33 @@ const Nav = () => {
           <img src="" alt="logo" />
         </div>
         <div className="navbar-main-menu">
-          {/* <Link className="nav-links" to="/">Doctors</Link>
-        <Link className="nav-links" to="/">Doctors</Link>
-        <Link className="nav-links" to="/">Doctors</Link>
-        <Link className="nav-links" to="/">Doctors</Link>
-        <Link className="nav-links" to="/">Doctors</Link> */}
+          {/* <NavLink to="/" className="link">Home</NavLink> */}
+        </div>
+        <div className="navbar-footer">
+          <div className="navbar-social">
+            <button type="button" className="social-links">
+              <BsTwitter />
+            </button>
+            <button type="button" className="social-links">
+              <FaFacebook />
+            </button>
+            <button type="button" className="social-links">
+              <TiSocialGooglePlus />
+            </button>
+            <button type="button" className="social-links">
+              <BsVimeo />
+            </button>
+            <button type="button" className="social-links">
+              <FaPinterestP />
+            </button>
+          </div>
+
         </div>
       </div>
       <div className="navbar-toggle">
         <div className="navbar-toggler">
-          <button type="button" onClick={() => setSidebar(!sidebar)}>
-          {IoMdArrowDropleft}
+          <button type="button" className="navbar-button" onClick={() => setSidebar(!sidebar)}>
+            <BiLeftArrow className="toggle-icon" />
           </button>
         </div>
       </div>
