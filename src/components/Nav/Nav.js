@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BiLeftArrow } from 'react-icons/bi';
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { TiSocialGooglePlus } from 'react-icons/ti';
@@ -51,7 +51,7 @@ const Nav = () => {
       <div className="navbar-toggle">
         <div className="navbar-toggler">
           <button type="button" className="navbar-button" onClick={() => setSidebar(!sidebar)}>
-            <BiLeftArrow className="toggle-icon" />
+            {sidebar ? <BiLeftArrow className="toggle-icon" /> : <BiRightArrow className="toggle-icon" /> }
           </button>
         </div>
       </div>
