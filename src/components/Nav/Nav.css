@@ -6,7 +6,7 @@
   bottom: 0;
   display: flex;
   flex-direction: row;
-  left: -16%;
+  left: -19%;
   transition: 950ms;
   align-items: inherit;
 }
@@ -29,6 +29,10 @@
 .navbar-menu-logo {
   margin: 40px auto;
   text-align: center;
+}
+
+.logo {
+  width: 80%;
 }
 
 .navbar-toggle {
@@ -60,7 +64,7 @@
 
 .navbar-toggler {
   background: #98bf0c;
-  bottom: 0;
+  bottom: 10%;
   position: fixed;
   width: 60px;
   border-top-right-radius: 23px;
@@ -71,6 +75,7 @@
 
 .navbar-footer {
   width: 70%;
+  margin-bottom: 30px;
 }
 
 .navbar-social {

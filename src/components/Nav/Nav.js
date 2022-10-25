@@ -3,6 +3,7 @@ import { BiLeftArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { TiSocialGooglePlus } from 'react-icons/ti';
+import logo from '../../assets/doctora.png';
 // import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
@@ -13,7 +14,7 @@ const Nav = () => {
     <div className={sidebar ? 'navbar active' : 'navbar'}>
       <div className="navbar-menu">
         <div className="navbar-menu-logo">
-          <img src="" alt="logo" />
+          <img className="logo" src={logo} alt="logo" />
         </div>
         <div className="navbar-main-menu">
           {/* <NavLink to="/" className="link">Home</NavLink> */}
