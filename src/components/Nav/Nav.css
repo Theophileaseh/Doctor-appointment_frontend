@@ -1,0 +1,46 @@
+.navbar {
+  color: black;
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  left: -16%;
+  transition: 950ms;
+  align-items: inherit;
+}
+
+.navbar.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.navbar-menu {
+  width: 80%;
+  background: green;
+}
+
+.navbar-menu-logo {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.navbar-toggle {
+  width: 20%;
+}
+
+.navbar-main-menu {
+  color: black;
+}
+
+.navbar-toggler {
+  background: #98bf0c;
+  bottom: 0;
+  position: fixed;
+  width: 40px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  height: 30px;
+  cursor: pointer;
+}
