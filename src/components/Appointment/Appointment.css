@@ -1,0 +1,67 @@
+.add-appointment-modal {
+  background: #98bf0c;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  display: none;
+}
+
+.appointment-head {
+  padding: 40px;
+}
+
+.close-modal-button {
+  background: none;
+  border: none;
+}
+
+.modal-close-icon {
+  color: #fff;
+  font-size: 35px;
+}
+
+.appointment-info {
+  padding: 40px;
+  color: #fff;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.add-appointment-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.select-doctors, .city-input, .date-input, .submit-appointment {
+  font-size: 18px;
+  padding: 7px;
+  border-radius: 8px;
+  color: #262525;
+  border: none;
+}
+
+.submit-appointment {
+  background: #585a54;
+  color: #fff;
+}
+
+.city-input:focus, .date-input:focus {
+  outline: none;
+}
+
+
+.select-doctors, .submit-appointment {
+  width: max-content;
+}
+
+@media screen and (max-width: 768px) {
+  .add-appointment-form {
+    flex-direction: column;
+  }
+
+  .select-doctors, .city-input, .date-input {
+    width: 70%;
+  }
+}

@@ -9,8 +9,9 @@ import './Nav.css';
 
 const Nav = () => {
   const [sidebar, setSidebar] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
   const activeLink = (isActive) => (isActive ? { background: '#98bf0c', color: '#fff' } : undefined);
-
+  // const showModal =
   return (
     <div className={sidebar ? 'navbar active' : 'navbar'}>
       <div className="navbar-menu">
