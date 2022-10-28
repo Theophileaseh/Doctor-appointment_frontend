@@ -1,5 +1,4 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 import { AiOutlineClose } from 'react-icons/ai';
 import './Appointment.css';
 
