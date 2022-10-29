@@ -30,8 +30,8 @@ const Nav = () => {
         </div>
         <div className="navbar-main-menu">
           <NavLink to="/" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
-          <NavLink to="#" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-          <NavLink to="/b" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
+          <NavLink style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setModal}>Add Appointment</NavLink>
+          <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
           <NavLink to="/c" style={({ isActive }) => activeLink(isActive)} className="nav-links">Add Doctor</NavLink>
           <NavLink to="/d" style={({ isActive }) => activeLink(isActive)} className="nav-links">Remove Doctor</NavLink>
           <button type="button" className="sign-out">Log out</button>

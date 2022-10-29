@@ -26,7 +26,7 @@ export const getAppointments = () => (dispatch) => {
 };
 
 export const addAppointments = () => (dispatch) => {
-  axios.post('appointments', newAppointments).then((res) => {
+  axios.post('appointments').then((res) => {
     dispatch({
       type: ADD_APPOINTMENTS,
       payload: res.data,
