@@ -11,23 +11,23 @@ const Appointment = () => {
       <div className="my-appointments-main">
       <table className="my-appointments-table">
   <tr className="appointments-table-head">
-    <th>Doctor</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Message</th>
-    <th>Action</th>
+    <th className="appointments-head-data">Doctor</th>
+    <th className="appointments-head-data">Date</th>
+    <th className="appointments-head-data">Time</th>
+    <th className="appointments-head-data">Message</th>
+    <th className="appointments-head-data">Action</th>
   </tr>
   <tr className="appointments-table-data">
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Germany</td>
-    <td><button type="button" className="delete-appointment-button">Delete</button></td>
+    <td className="appointments-row-data">Alfreds Futterkiste</td>
+    <td className="appointments-row-data">Maria Anders</td>
+    <td className="appointments-row-data">Germany</td>
+    <td className="appointments-row-data">Germany</td>
+    <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button">Delete</button></td>
   </tr>
   <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
+    <td className="appointments-row-data">Centro comercial Moctezuma</td>
+    <td className="appointments-row-data">Francisco Chang</td>
+    <td className="appointments-row-data">Mexico</td>
   </tr>
 </table>
       </div>

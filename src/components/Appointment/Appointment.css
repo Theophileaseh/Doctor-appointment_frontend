@@ -2,7 +2,7 @@
   background: #fff;
 }
 
-.appointments-head {
+.my-appointments-head {
   text-align: center;
   width: 90%;
   margin: 0 auto;
@@ -30,4 +30,28 @@
   border-radius: 3px;
   padding: 5px;
   cursor: pointer;
+}
+
+.appointments-table-head {
+  background: #98bf0c;
+  color: #fff;
+  font-size: 22px;
+}
+
+.appointments-head-data {
+  padding: 20px;
+}
+
+.appointments-row-data {
+  text-align: center;
+  padding: 5px;
+}
+
+.appointments-table-data:nth-child(even) {
+  background: #a7b869;
+  color: #fff;
+}
+
+.data-buttons {
+  background: none;
 }

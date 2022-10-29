@@ -18,7 +18,7 @@
 
 .navbar-menu {
   width: 78%;
-  background: #bcb9b912;
+  background: #fbfff3f5;
   border-right: 2px solid gainsboro;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   color: #252525;
   font-weight: 600;
   padding: 10px;
-  width: 118%;
+  width: 110%;
 }
 
 .logo {

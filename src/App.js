@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <><div>
       <Router>
         <Nav />
         <Routes>
@@ -14,6 +14,7 @@ function App() {
         </Routes>
         <Appointment />
       </Router>
+      </div>
       <AddAppointment />
     </>
   );
