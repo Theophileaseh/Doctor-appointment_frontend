@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getDoctors } from '../../redux/doctor';
 import { hideModal } from '../../redux/appointmentModal';
 import { AiOutlineClose } from 'react-icons/ai';
 import './Appointment.css';
 
 const Appointment = () => {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
-  console.log("modal state", appointmentModalState.show);
+
+  const doctors = useSelector((state) => state.doctor);
+  console.log("doctors", doctors)
+
+  useEffect(() => {
+      dispatch(getDoctors());
+  }, []);
 
   const dispatch = useDispatch();
 
@@ -36,12 +43,22 @@ const Appointment = () => {
     </div>
     <div className="add-appointment-section">
       <form className="add-appointment-form">
-        <select className="select-doctors">
-          <option>Doctor</option>
+        <div className="doctors-date-time">
+
+        <select className="select-doctors" required>
+          {doctors.map((doctor) => (
+            <option>{doctor}</option>
+          ))}
         </select>
-        <input type="text" name="city" className="city-input" placeholder="Type Your city..." />
-        <input type="date" name="date" className="date-input" />
+        <input type="date" name="date" className="date-input" required/>
+        <input type="time" name="time" className="date-input" required />
+        
+                  
+        </div>
+        <div className="description-submit">
+        <textarea name="description" className="city-input" placeholder="Type message..." required />
         <button type="submit" className="submit-appointment">Add Appointment</button>
+        </div>
       </form>
     </div>
   </div> ) : ''
