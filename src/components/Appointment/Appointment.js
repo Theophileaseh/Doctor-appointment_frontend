@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDoctors } from '../../redux/doctor';
 import { hideModal } from '../../redux/appointmentModal';
+import { addAppointments } from '../../redux/appointment';
 import { AiOutlineClose } from 'react-icons/ai';
 import './Appointment.css';
 
@@ -23,6 +24,15 @@ const Appointment = () => {
         dispatch(hideModal({type: 'HIDE_MODAL'}));
   }
 
+  const addsAppointments = {
+    token, user_id, doctor_id,
+    date_of_appointment: date,
+    time_of_appointment: time,
+    description: description
+  }
+
+  dispatch(addAppointments({type: 'ADD_APPOINTMENTS', addsAppointments}));
+
   return (
 
    appointmentModalState.show === true ? (
@@ -42,7 +52,7 @@ const Appointment = () => {
       </p>
     </div>
     <div className="add-appointment-section">
-      <form className="add-appointment-form">
+      <form className="add-appointment-form" onSubmit={addsAppointments}>
         <div className="doctors-date-time">
 
         <select className="select-doctors" required>
