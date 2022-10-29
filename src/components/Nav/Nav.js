@@ -14,7 +14,9 @@ const Nav = () => {
   const dispatch = useDispatch();
 
   const setModal = () => {
+ 
         dispatch(showModal({type: 'SHOW_MODAL'}));
+ 
   }
 
   const [sidebar, setSidebar] = useState(false);
