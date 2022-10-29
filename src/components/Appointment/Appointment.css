@@ -45,6 +45,7 @@
 .submit-appointment {
   background: #585a54;
   color: #fff;
+  cursor: pointer;
 }
 
 .city-input:focus, .date-input:focus {
