@@ -121,3 +121,9 @@
   border-radius: 3px;
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 90%;
+  }
+}
