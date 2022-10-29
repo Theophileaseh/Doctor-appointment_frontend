@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { showModal } from '../../redux/appointmentModal';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
@@ -10,10 +10,6 @@ import logo from '../../assets/doctora.png';
 import './Nav.css';
 
 const Nav = () => {
-
-  const appointmentModalState = useSelector((state) => state.appointmentModal);
-  console.log("modal state", appointmentModalState);
-  console.log("showmodal", showModal)
 
   const dispatch = useDispatch();
 

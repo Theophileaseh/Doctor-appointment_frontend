@@ -1,11 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { showModal } from '../../redux/appointmentModal';
 import { AiOutlineClose } from 'react-icons/ai';
 import './Appointment.css';
 
-const Appointment = () => (
+const Appointment = () => {
+  const appointmentModalState = useSelector((state) => state.appointmentModal);
+  console.log("modal state", appointmentModalState.show);
+
+  const dispatch = useDispatch();
+
+  const hideModal = () => {
+        dispatch(showModal({type: 'HIDE_MODAL'}));
+  }
+
+  return (
+
+   appointmentModalState.show === true ? (
+
   <div className="add-appointment-modal">
     <div className="appointment-head">
-      <button type="button" className="close-modal-button">
+      <button type="button" className="close-modal-button" onClick={hideModal}>
         <AiOutlineClose className="modal-close-icon" />
       </button>
     </div>
@@ -27,7 +42,7 @@ const Appointment = () => (
         <button type="submit" className="submit-appointment">Add Appointment</button>
       </form>
     </div>
-  </div>
-);
+  </div> ) : ''
+)};
 
 export default Appointment;
