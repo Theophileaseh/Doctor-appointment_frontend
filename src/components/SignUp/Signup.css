@@ -1,0 +1,37 @@
+.sinup-form {
+  width: 40%;
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: #98bf0c;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.form-input {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.sigup-submit-btn {
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 5px;
+  width: 20%;
+  margin: 0 auto;
+  border: none;
+  color: #637c07;
+  width: max-content;
+}
