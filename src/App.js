@@ -6,6 +6,7 @@ import Appointment from './components/Appointment/Appointment';
 import './App.css';
 import Login from './components/User_registration/Registration';
 import SignUp from './components/User_registration/SignUp';
+import AddDoctorsForm from './components/AddDoctors/AddDoctorsForm';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/Registration" exact element={<Login />} />
             <Route path="/Sign_up" exact element={<SignUp />} />
+            <Route path="/Add_Doctors" exact element={<AddDoctorsForm />} />
             <Route path="/appointments" exact element={<Appointment />} />
           </Routes>
         </Router>

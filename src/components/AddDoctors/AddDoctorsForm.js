@@ -1,18 +1,22 @@
 import React from 'react';
-import './Registration.css';
+import './AddDoctors.css';
 
-function SignUp() {
+function AddDoctorsForm() {
   return (
-    <div className="main-section">
-      <h1 className="login">Sign Up</h1>
+    <div>
+      <h1 className="login">Add Doctors</h1>
       <form>
         <div className="form-input">
-          <label htmlFor="userName">Email</label>
+          <label htmlFor="userName">Name</label>
           <input id="userName" type="text" />
         </div>
         <div className="form-input">
-          <label>Password</label>
+          <label>Specialization</label>
           <input type="text" />
+        </div>
+        <div className="form-input">
+          <label>Specialization</label>
+          <input type="filenpm start" />
         </div>
         <div className="form-action">
           <button type="submit" className="submit-action">Sign in</button>
@@ -22,4 +26,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default AddDoctorsForm;
