@@ -1,18 +1,42 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addUsers } from '../../redux/user';
 import './Signup.css';
 
-const Signup = () => {
+function Signup() {
+  const dispatch = useDispatch();
+
+  const addusers = (e) => {
+    e.preventDefault();
+
+    const newUser = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      password: e.target[2].value,
+
+    };
+
+    if (e.target[2].value === e.target[3].value) {
+      dispatch(addUsers(newUser, { type: 'ADD_USERS' }));
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Passwords Do Not Match');
+    }
+  };
+
   return (
     <div className="signup-container">
-      <form>
-        <input type="text" name="name" required placeholder="name" />
-        <input type="email" name="name" required placeholder="email" />
-        <input type="password" name="password" required placeholder="password" />
-        <input type="password" name="confirmPassword" required placeholder="confirm password" />
+      <form className="sinup-form" onSubmit={addusers}>
+        <h2>Sign Up</h2>
+        <input type="text" className="form-input" name="name" required placeholder="name" />
+        <input type="email" className="form-input" name="email" required placeholder="email" />
+        <input type="password" className="form-input" name="password" required placeholder="password" />
+        <input type="password" className="form-input" name="confirmPassword" required placeholder="confirm password" />
+        <button type="submit" className="sigup-submit-btn">Sign Up</button>
       </form>
-      
+
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
