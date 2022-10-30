@@ -2,6 +2,7 @@ import axios from '../base/axios';
 
 const GET_DOCTORS = 'doctora/redux/GET_DOCTORS';
 
+// eslint-disable-next-line default-param-last
 const doctorReducer = (state = [], action) => {
   switch (action.type) {
     case GET_DOCTORS:
@@ -20,6 +21,5 @@ export const getDoctors = () => (dispatch) => {
     });
   });
 };
-
 
 export default doctorReducer;

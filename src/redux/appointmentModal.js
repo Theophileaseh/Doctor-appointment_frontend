@@ -1,7 +1,8 @@
 const SHOW_MODAL = 'doctora/redux/SHOW_MODAL';
 const HIDE_MODAL = 'doctora/redux/HIDE_MODAL';
 
-const appointmentModalReducer = (state = { show: false}, action) => {
+// eslint-disable-next-line default-param-last
+const appointmentModalReducer = (state = { show: false }, action) => {
   switch (action.type) {
     case SHOW_MODAL:
       return action.payload;
@@ -15,12 +16,12 @@ const appointmentModalReducer = (state = { show: false}, action) => {
 
 export const showModal = () => ({
   type: SHOW_MODAL,
-  payload: {show: true},
+  payload: { show: true },
 });
 
 export const hideModal = () => ({
   type: HIDE_MODAL,
-  payload: {show: false},
+  payload: { show: false },
 });
 
 export default appointmentModalReducer;

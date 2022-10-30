@@ -6,14 +6,14 @@ import './App.css';
 
 function App() {
   return (
-    <><div>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/appointments" exact element={<Appointment />} />
-        </Routes>
-        <Appointment />
-      </Router>
+    <>
+      <div>
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/appointments" exact element={<Appointment />} />
+          </Routes>
+        </Router>
       </div>
       <AddAppointment />
     </>
