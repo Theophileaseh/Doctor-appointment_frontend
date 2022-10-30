@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/doctora.png';
 import './Nav.css';
 
-const Nav = () => {
+function Nav() {
   const [sidebar, setSidebar] = useState(false);
   const activeLink = (isActive) => (isActive ? { background: '#98bf0c', color: '#fff' } : undefined);
 
@@ -64,6 +64,6 @@ const Nav = () => {
 
     </div>
   );
-};
+}
 
 export default Nav;
