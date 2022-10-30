@@ -8,13 +8,20 @@ import SignUp from './components/User_registration/SignUp';
 
 function App() {
   return (
-    <Router>
-      <Nav />
-      <Routes>
-        <Route path="/Registration" exact element={<Login />} />
-        <Route path="/Sign_up" element={<SignUp />} />
-      </Routes>
-    </Router>
+    <>
+      <div>
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/Registration" exact element={<Login />} />
+            <Route path="/Sign_up" element={<SignUp />} />
+            <Route path="/appointments" exact element={<Appointment />} />
+          </Routes>
+        </Router>
+      </div>
+
+      <AddAppointment />
+    </>
   );
 }
 
