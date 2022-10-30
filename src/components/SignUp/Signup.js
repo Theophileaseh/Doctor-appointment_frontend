@@ -1,10 +1,11 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUsers } from '../../redux/user';
 import './Signup.css';
 
 function Signup() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   const addusers = (e) => {
     e.preventDefault();
@@ -23,6 +24,12 @@ function Signup() {
       alert('Passwords Do Not Match');
     }
   };
+
+  useEffect(() => {
+    if (user.id) {
+      window.location = '/login';
+    }
+  });
 
   return (
     <div className="signup-container">
