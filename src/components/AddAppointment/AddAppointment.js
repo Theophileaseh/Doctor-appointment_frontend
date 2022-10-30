@@ -26,7 +26,7 @@ function AddAppointment() {
 
     const addsAppointments = {
       token: user.token,
-      user_id, 
+      user_id,
       doctor_id: e.target[0].value,
       date_of_appointment: e.target[1].value,
       time_of_appointment: e.target[2].value,

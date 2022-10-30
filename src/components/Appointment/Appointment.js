@@ -5,7 +5,7 @@ import './Appointment.css';
 import axios from '../../base/axios';
 
 function Appointment() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
   const allAppointments = () => { axios.get(`doctors/${doctorId}/appointments`).then((res) => { setData(res.data); }); };
 
   const dispatch = useDispatch();
@@ -24,6 +24,8 @@ function Appointment() {
 
     dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
   };
+
+  console.log('data', data);
 
   return (
     <div className="my-appointments-container">
