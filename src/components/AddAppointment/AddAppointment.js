@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineClose } from 'react-icons/ai';
+import { addAppointments } from '../../redux/appointment';
 import { getDoctors } from '../../redux/doctor';
 import { hideModal } from '../../redux/appointmentModal';
-// import { addAppointments } from '../../redux/appointment';
 import './AddAppointment.css';
 
 function AddAppointment() {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
+  const user = useSelector((state) => state.user);
 
   const doctors = useSelector((state) => state.doctor);
-  console.log('doctors', doctors);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,14 +21,20 @@ function AddAppointment() {
     dispatch(hideModal({ type: 'HIDE_MODAL' }));
   };
 
-  // const addsAppointments = {
-  //   token, user_id, doctor_id,
-  //   date_of_appointment: date,
-  //   time_of_appointment: time,
-  //   description: description
-  // }
+  const newAppointment = (e) => {
+    e.preventDefault();
 
-  // dispatch(addAppointments({type: 'ADD_APPOINTMENTS'}));
+    const addsAppointments = {
+      token: user.token,
+      user_id, 
+      doctor_id: e.target[0].value,
+      date_of_appointment: e.target[1].value,
+      time_of_appointment: e.target[2].value,
+      description: e.target[3].value,
+    };
+
+    dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
+  };
 
   return (
 
@@ -49,7 +55,7 @@ function AddAppointment() {
           </p>
         </div>
         <div className="add-appointment-section">
-          <form className="add-appointment-form">
+          <form className="add-appointment-form" onSubmit={newAppointment}>
             <div className="doctors-date-time">
 
               <select className="select-doctors" required>

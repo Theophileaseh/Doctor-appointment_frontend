@@ -18,11 +18,12 @@ function Appointment() {
   const removeAppointment = (app) => {
     const removedAppointment = {
       id: app.id,
-      doctor_id: doctorId
-    }
+      doctor_id: doctorId,
+      token: user.token,
+    };
 
     dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
-  }
+  };
 
   return (
     <div className="my-appointments-container">
