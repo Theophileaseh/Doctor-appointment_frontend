@@ -32,22 +32,26 @@ function Appointment() {
       </div>
       <div className="my-appointments-main">
         <table className="my-appointments-table">
-          <tr className="appointments-table-head">
-            <th className="appointments-head-data">Doctor</th>
-            <th className="appointments-head-data">Date</th>
-            <th className="appointments-head-data">Time</th>
-            <th className="appointments-head-data">Message</th>
-            <th className="appointments-head-data">Action</th>
-          </tr>
-          {data.map((app) => (
-            <tr className="appointments-table-data" key={app.id}>
-              <td className="appointments-row-data">{app.doctor_name}</td>
-              <td className="appointments-row-data">{app.date}</td>
-              <td className="appointments-row-data">{app.time}</td>
-              <td className="appointments-row-data">{app.description}</td>
-              <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={removeAppointment(app.id)}>Delete</button></td>
+          <thead>
+            <tr className="appointments-table-head">
+              <th className="appointments-head-data">Doctor</th>
+              <th className="appointments-head-data">Date</th>
+              <th className="appointments-head-data">Time</th>
+              <th className="appointments-head-data">Message</th>
+              <th className="appointments-head-data">Action</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {data.map((app) => (
+              <tr className="appointments-table-data" key={app.id}>
+                <td className="appointments-row-data">{app.doctor_name}</td>
+                <td className="appointments-row-data">{app.date}</td>
+                <td className="appointments-row-data">{app.time}</td>
+                <td className="appointments-row-data">{app.description}</td>
+                <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={removeAppointment(app.id)}>Delete</button></td>
+              </tr>
+            ))}
+          </tbody>
 
         </table>
       </div>
