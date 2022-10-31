@@ -6,7 +6,7 @@ import axios from '../../base/axios';
 
 function Appointment() {
   const [data, setData] = useState([]);
-  const allAppointments = () => { axios.get(`doctors/${doctorId}/appointments`).then((res) => { setData(res.data); }); };
+  const allAppointments = () => { axios.get('doctors/patient/appointments').then((res) => { setData(res.data); }); };
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
@@ -42,7 +42,7 @@ function Appointment() {
             <th className="appointments-head-data">Action</th>
           </tr>
           {data.map((app) => (
-            <tr className="appointments-table-data" key={app}>
+            <tr className="appointments-table-data" key={app.id}>
               <td className="appointments-row-data">{app.doctor}</td>
               <td className="appointments-row-data">{app.date}</td>
               <td className="appointments-row-data">{app.time}</td>

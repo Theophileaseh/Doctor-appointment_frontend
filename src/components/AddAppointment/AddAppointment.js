@@ -1,32 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineClose } from 'react-icons/ai';
+import axios from '../../base/axios';
 import { addAppointments } from '../../redux/appointment';
-// import { getDoctors } from '../../redux/doctor';
 import { hideModal } from '../../redux/appointmentModal';
 import './AddAppointment.css';
 
 function AddAppointment() {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
   const user = useSelector((state) => state.user);
+  const [data, setData] = useState([]);
+  const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
 
   console.log('usert', user);
 
-  const doctors = useSelector((state) => state.doctor);
+  useEffect(() => {
+    doctors();
+  }, []);
 
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getDoctors());
-  // }, [dispatch]);
 
   const hidesModal = () => {
     dispatch(hideModal({ type: 'HIDE_MODAL' }));
   };
 
-  const doctorId = 1;
-
   const newAppointment = (e) => {
     e.preventDefault();
+
+    const doctorId = e.target[0].value;
 
     const addsAppointments = {
       token: user.token,
@@ -64,8 +65,8 @@ function AddAppointment() {
 
               <select className="select-doctors" required name="doctor" placeholder="Select">
                 <option>Select Doctor</option>
-                {doctors.map((doctor) => (
-                  <option key={doctor}>{doctor}</option>
+                {data.map((doctor) => (
+                  <option key={doctor.id}>{doctor.name}</option>
                 ))}
               </select>
               <input type="date" name="date" className="date-input" required />
