@@ -26,8 +26,8 @@ function AddAppointment() {
 
     const addsAppointments = {
       token: user.token,
-      user_id,
-      doctor_id: e.target[0].value,
+      user_id: 1,
+      doctor_id: 1,
       date_of_appointment: e.target[1].value,
       time_of_appointment: e.target[2].value,
       description: e.target[3].value,
@@ -58,7 +58,8 @@ function AddAppointment() {
           <form className="add-appointment-form" onSubmit={newAppointment}>
             <div className="doctors-date-time">
 
-              <select className="select-doctors" required>
+              <select className="select-doctors" required name="doctor" placeholder="Select">
+                <option disabled>Select Doctor</option>
                 {doctors.map((doctor) => (
                   <option key={doctor}>{doctor}</option>
                 ))}
