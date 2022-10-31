@@ -39,8 +39,8 @@ export const addAppointments = (addsAppointments) => (dispatch) => {
   });
 };
 
-export const removeAppointments = (removedAppointment, id, doctorId) => (dispatch) => {
-  axios.delete(`doctors/${doctorId}/appointments/${id}`, removedAppointment).then((res) => {
+export const removeAppointments = (removedAppointment, appId, doctorId) => (dispatch) => {
+  axios.delete(`doctors/${doctorId}/appointments/${appId}`, removedAppointment).then((res) => {
     dispatch({
       type: REMOVE_APPOINTMENTS,
       payload: res.data,

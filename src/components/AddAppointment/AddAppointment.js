@@ -12,8 +12,6 @@ function AddAppointment() {
   const [data, setData] = useState([]);
   const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
 
-  console.log('usert', user);
-
   useEffect(() => {
     doctors();
   }, []);
@@ -31,7 +29,7 @@ function AddAppointment() {
 
     const addsAppointments = {
       token: user.token,
-      user_id: '1',
+      user_id: user.user_id,
       doctor_id: doctorId,
       date_of_appointment: e.target[1].value,
       time_of_appointment: e.target[2].value,
@@ -53,7 +51,9 @@ function AddAppointment() {
         </div>
         <div className="appointment-info">
           <p>
-            Hello @user, welcome to Doctora App appointment page.
+            Hello
+            <span>{user.username}</span>
+            , welcome to Doctora App appointment page.
             Here you can make private appointments with any Doctor of your
             choice for a specified date and location.
             Select a doctor, city and date to create your appointment. Enjoy!

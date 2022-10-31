@@ -7,7 +7,6 @@ import axios from '../../base/axios';
 function Appointment() {
   const [data, setData] = useState([]);
   const allAppointments = () => { axios.get('doctors/patient/appointments').then((res) => { setData(res.data); }); };
-
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
@@ -16,17 +15,16 @@ function Appointment() {
   }, []);
 
   const removeAppointment = (app) => {
+    const doctorId = app.doctor_id;
+    const appId = app.id;
     const removedAppointment = {
-      id: app.id,
+      id: appId,
       doctor_id: doctorId,
       token: user.token,
     };
 
     dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
   };
-
-  console.log('data', data);
-
   return (
     <div className="my-appointments-container">
       <div className="my-appointments-head">
@@ -43,7 +41,7 @@ function Appointment() {
           </tr>
           {data.map((app) => (
             <tr className="appointments-table-data" key={app.id}>
-              <td className="appointments-row-data">{app.doctor}</td>
+              <td className="appointments-row-data">{app.doctor_name}</td>
               <td className="appointments-row-data">{app.date}</td>
               <td className="appointments-row-data">{app.time}</td>
               <td className="appointments-row-data">{app.description}</td>
