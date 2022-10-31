@@ -1,0 +1,40 @@
+.home-container {
+  padding: 90px;
+  height: 100vh;
+  width: 100vw;
+  background: #f2f2f2;
+  position: fixed;
+}
+
+.home-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctora-home-logo {
+  width: 180px;
+}
+
+.doctora-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px;
+}
+
+.doctora-link {
+  text-decoration: none;
+  border: 2px solid #98bf0c;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #98bf0c;
+}
+
+.doctora-link:hover {
+  background: #98bf0c;
+  color: #fff;
+}

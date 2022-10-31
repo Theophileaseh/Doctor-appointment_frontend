@@ -10,11 +10,13 @@ import logo from '../../assets/doctora.png';
 import './Nav.css';
 
 function Nav() {
+
   const dispatch = useDispatch();
 
   const setModal = () => {
     dispatch(showModal({ type: 'SHOW_MODAL' }));
   };
+
 
   const [sidebar, setSidebar] = useState(false);
   const activeLink = (isActive) => (isActive ? { background: '#98bf0c', color: '#fff' } : undefined);
