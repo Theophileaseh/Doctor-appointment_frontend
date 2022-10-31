@@ -5,6 +5,7 @@ import Signup from './components/SignUp/Signup';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import './App.css';
+import AddDoctorsForm from './components/AddDoctors/AddDoctorsForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/login" exact element={<Login />} />
+        <Route path="/AddDoctors" exact element={<AddDoctorsForm />} />
       </Routes>
     </Router>
   );

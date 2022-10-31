@@ -1,27 +1,39 @@
-import React from 'react';
-import './AddDoctors.css';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import './AddDoctors.css';
+import '../SignUp/Signup.css';
 
 function AddDoctorsForm() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  const authUsers = (e) => {
+    e.preventDefault();
+
+    const AddDoctors = {
+      email: e.target[0].value,
+      password: e.target[1].value,
+
+    };
+    dispatch((AddDoctors, { type: 'CREATE_DOCTORS' }));
+  };
+
+  useEffect(() => {
+    if (user.username) {
+      window.location = '/doctors';
+    }
+  });
+
   return (
-    <div>
-      <h1 className="login">Add Doctors</h1>
-      <form>
-        <div className="form-input">
-          <label htmlFor="userName">Name</label>
-          <input id="userName" type="text" />
-        </div>
-        <div className="form-input">
-          <label>Specialization</label>
-          <input type="text" />
-        </div>
-        <div className="form-input">
-          <label>Specialization</label>
-          <input type="filenpm start" />
-        </div>
-        <div className="form-action">
-          <button type="submit" className="submit-action">Sign in</button>
-        </div>
+    <div className="signup-container">
+      <form className="sinup-form" onSubmit={authUsers}>
+        <h2>ADD DOCTORS</h2>
+        <input type="text" className="form-input" name="name" required placeholder="doctor" />
+        <input type="text" className="form-input" name="specialization" required placeholder="specialization" />
+        <input type="file" className="form-input" name="picture" required placeholder="select" />
+        <button type="submit" className="sigup-submit-btn"> submit</button>
       </form>
+
     </div>
   );
 }
