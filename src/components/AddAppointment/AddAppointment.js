@@ -23,7 +23,7 @@ function AddAppointment() {
     dispatch(hideModal({ type: 'HIDE_MODAL' }));
   };
 
-  const doctorId = '1';
+  const doctorId = 1;
 
   const newAppointment = (e) => {
     e.preventDefault();
