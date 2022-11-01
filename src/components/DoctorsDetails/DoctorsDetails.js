@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
 import axios from '../../base/axios';
@@ -8,7 +7,7 @@ import './DoctorsDetails.css';
 
 function DoctorsDetails() {
   const { ids } = useParams();
-
+  const user = useSelector((state) => state.user);
   const [data, setData] = useState([]);
   const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
   const dispatch = useDispatch();
@@ -29,8 +28,11 @@ function DoctorsDetails() {
     dispatch(showModal({ type: 'SHOW_MODAL' }));
   };
 
+  if (!user.token) {
+    window.location = '/login';
+  }
+
   return (
-    user.token ? (
     <div className="doctors-details-container">
       <div className="doctors-image">
         <img src={myDoctor.picture} alt="doctor" />
@@ -41,7 +43,7 @@ function DoctorsDetails() {
         <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button>
       </div>
 
-    </div> ) : <Navigate to="/login" />
+    </div>
   );
 }
 

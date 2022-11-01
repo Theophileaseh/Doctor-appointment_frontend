@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import axios from '../../base/axios';
 import { addAppointments } from '../../redux/appointment';
@@ -41,7 +40,6 @@ function AddAppointment() {
   };
 
   return (
-user.token ? (
     appointmentModalState.show === true ? (
 
       <div className="add-appointment-modal">
@@ -81,7 +79,7 @@ user.token ? (
           </form>
         </div>
       </div>
-    ) : '' ) : <Navigate to="/login" />
+    ) : ''
   );
 }
 

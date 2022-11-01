@@ -18,14 +18,12 @@ function Login() {
     dispatch(loginusers(loginUser, { type: 'LOGIN_USER' }));
   };
 
-  console.log('userin', user);
-
   useEffect(() => {
-    if (user.role === null) {
+    if (user.role === null && user.token) {
       window.location = '/doctors';
     }
 
-    if (user.role === 'admin') {
+    if (user.role === 'admin' && user.token) {
       window.location = '/add-doctor';
     }
   });

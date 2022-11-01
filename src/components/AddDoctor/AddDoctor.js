@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 import { addDoctors } from '../../redux/doctor';
 import { loginusers } from '../../redux/user';
 import logo from '../../assets/doctora.png';
@@ -30,31 +29,33 @@ function AddDoctor() {
     window.location = '/login';
   };
 
-  return (
-    user.token ? (
-      <div className="signup-container">
-        <div className="header">
-          <div className="logos">
-            <img src={logo} alt="logo" className="admin-logo" />
-          </div>
-          <div className="signs-out">
-            <p className="welcome">
-              Welcome
-              {user.username}
-            </p>
-            <button type="button" className="admin-signout" onClick={signOut}>Log out</button>
-          </div>
-        </div>
-        <form className="sinup-form" onSubmit={addsDoctor}>
-          <h2>Add New Doctor</h2>
-          <input type="text" className="form-input" name="name" required placeholder="name" />
-          <input type="text" className="form-input" name="specialty" required placeholder="Specialty" />
-          <input type="text" className="form-input" name="photo" required placeholder="Add Link to profile photo" />
-          <button type="submit" className="sigup-submit-btn">Add Doctor</button>
-        </form>
+  if (!user.token) {
+    window.location = '/login';
+  }
 
+  return (
+    <div className="signup-container">
+      <div className="header">
+        <div className="logos">
+          <img src={logo} alt="logo" className="admin-logo" />
+        </div>
+        <div className="signs-out">
+          <p className="welcome">
+            Welcome
+            {user.username}
+          </p>
+          <button type="button" className="admin-signout" onClick={signOut}>Log out</button>
+        </div>
       </div>
-    ) : <Navigate to="/login" />
+      <form className="sinup-form" onSubmit={addsDoctor}>
+        <h2>Add New Doctor</h2>
+        <input type="text" className="form-input" name="name" required placeholder="name" />
+        <input type="text" className="form-input" name="specialty" required placeholder="Specialty" />
+        <input type="text" className="form-input" name="photo" required placeholder="Add Link to profile photo" />
+        <button type="submit" className="sigup-submit-btn">Add Doctor</button>
+      </form>
+
+    </div>
   );
 }
 

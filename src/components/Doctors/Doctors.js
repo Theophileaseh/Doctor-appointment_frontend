@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import axios from '../../base/axios';
 import './Doctors.css';
 
 function Doctors() {
+  const user = useSelector((state) => state.user);
   const [data, setData] = useState([]);
   const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
 
@@ -11,8 +13,10 @@ function Doctors() {
     allDoctors();
   }, []);
 
+  if (!user.token) {
+    window.location = '/login';
+  }
   return (
-    user.token ? (
     <div className="doctors-container">
       <div className="doctors-section">
         {data.map((doctor) => (
@@ -24,7 +28,7 @@ function Doctors() {
           </Link>
         ))}
       </div>
-    </div> ) : <Navigate to="/login" />
+    </div>
   );
 }
 
