@@ -7,6 +7,7 @@ import Signup from './components/SignUp/Signup';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import AddDoctor from './components/AddDoctor/AddDoctor';
+import DoctorsDetails from './components/DoctorsDetails/DoctorsDetails';
 import './App.css';
 import Doctors from './components/Doctors/Doctors';
 
@@ -24,6 +25,8 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/add-doctor" exact element={<AddDoctor />} />
             <Route path="/doctors" exact element={<Doctors />} />
+            <Route path="/doctors/1" exact element={<DoctorsDetails />} />
+
           </Routes>
         </Router>
       </div>

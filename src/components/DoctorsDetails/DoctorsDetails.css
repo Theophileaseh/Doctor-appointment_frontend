@@ -1,3 +1,9 @@
 .doctors-details-container {
-  background: #fff;
+  display: flex;
+  gap: 40px;
+  width: 80%;
+  margin: 50px auto;
+  justify-content: center;
+  align-items: center;
 }
+

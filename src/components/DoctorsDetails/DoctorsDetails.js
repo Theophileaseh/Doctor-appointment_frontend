@@ -12,10 +12,17 @@ function DoctorsDetails() {
   const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
   const dispatch = useDispatch();
   useEffect(() => {
-    allDoctors();
-  }, []);
+    if (data && data.length === 0) {
+      allDoctors();
+      console.log('real', data);
+    }
+  }, [data.length]);
+  console.log('doctors', data);
 
-  const myDoctor = data.filter((single) => (single.id === ids));
+  const myDoctor = data.filter((cc) => (cc.id === 1));
+  console.log(myDoctor);
+  const doc = myDoctor[0] && myDoctor[0];
+  console.log('singDoc', doc);
 
   const setModal = () => {
     dispatch(showModal({ type: 'SHOW_MODAL' }));

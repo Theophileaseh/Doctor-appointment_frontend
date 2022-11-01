@@ -22,7 +22,7 @@ function Nav() {
   const location = useLocation();
 
   return (
-    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' ? '' : (
+    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
         <div className="navbar-menu">
           <div className="navbar-menu-logo">
