@@ -4,14 +4,12 @@ import { addDoctors } from '../../redux/doctor';
 import '../SignUp/Signup.css';
 
 function AddDoctor() {
-
   const user = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
   const addsDoctor = (e) => {
     e.preventDefault();
-
 
     const addDoctor = {
       token: user.token,
