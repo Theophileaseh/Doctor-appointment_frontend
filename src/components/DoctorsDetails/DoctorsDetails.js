@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
 import axios from '../../base/axios';
@@ -29,6 +30,7 @@ function DoctorsDetails() {
   };
 
   return (
+    user.token ? (
     <div className="doctors-details-container">
       <div className="doctors-image">
         <img src={myDoctor.picture} alt="doctor" />
@@ -39,7 +41,7 @@ function DoctorsDetails() {
         <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button>
       </div>
 
-    </div>
+    </div> ) : <Navigate to="/login" />
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from '../../base/axios';
 import './Doctors.css';
 
@@ -12,6 +12,7 @@ function Doctors() {
   }, []);
 
   return (
+    user.token ? (
     <div className="doctors-container">
       <div className="doctors-section">
         {data.map((doctor) => (
@@ -23,7 +24,7 @@ function Doctors() {
           </Link>
         ))}
       </div>
-    </div>
+    </div> ) : <Navigate to="/login" />
   );
 }
 

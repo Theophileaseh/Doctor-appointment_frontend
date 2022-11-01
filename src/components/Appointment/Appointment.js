@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { removeAppointments } from '../../redux/appointment';
 import './Appointment.css';
 import axios from '../../base/axios';
@@ -26,6 +27,7 @@ function Appointment() {
     dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
   };
   return (
+    user.token ? (
     <div className="my-appointments-container">
       <div className="my-appointments-head">
         <h2 className="appointments-heading">Your Appointments</h2>
@@ -55,7 +57,7 @@ function Appointment() {
 
         </table>
       </div>
-    </div>
+    </div> ) : <Navigate to="/login" />
   );
 }
 
