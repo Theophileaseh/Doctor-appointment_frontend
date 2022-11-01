@@ -6,6 +6,7 @@ import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import { NavLink, useLocation } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
+import { loginusers } from '../../redux/user';
 import logo from '../../assets/doctora.png';
 import './Nav.css';
 
@@ -21,6 +22,11 @@ function Nav() {
 
   const location = useLocation();
 
+  const signOut = () => {
+    dispatch(loginusers([]));
+    window.location = '/login';
+  };
+
   return (
     location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
@@ -34,7 +40,7 @@ function Nav() {
             <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
             <NavLink to="/c" style={({ isActive }) => activeLink(isActive)} className="nav-links">Add Doctor</NavLink>
             <NavLink to="/d" style={({ isActive }) => activeLink(isActive)} className="nav-links">Remove Doctor</NavLink>
-            <button type="button" className="sign-out">Log out</button>
+            <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">
             <div className="navbar-social">

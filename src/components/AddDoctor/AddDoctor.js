@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDoctors } from '../../redux/doctor';
+import { loginusers } from '../../redux/user';
 import logo from '../../assets/doctora.png';
 import '../SignUp/Signup.css';
 import './AddDoctor.css';
@@ -23,6 +24,11 @@ function AddDoctor() {
     dispatch(addDoctors(addDoctor, { type: 'ADD_DOCTORS' }));
   };
 
+  const signOut = () => {
+    dispatch(loginusers([]));
+    window.location = '/login';
+  };
+
   return (
     <div className="signup-container">
       <div className="header">
@@ -34,7 +40,7 @@ function AddDoctor() {
             Welcome
             {user.username}
           </p>
-          <button type="button" className="admin-signout">Log out</button>
+          <button type="button" className="admin-signout" onClick={signOut}>Log out</button>
         </div>
       </div>
       <form className="sinup-form" onSubmit={addsDoctor}>
