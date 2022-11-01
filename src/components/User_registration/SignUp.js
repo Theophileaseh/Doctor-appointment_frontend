@@ -1,8 +1,8 @@
 import React from 'react';
 import './Registration.css';
 
-const SignUp = () => (
-  <>
+function SignUp() {
+  return (
     <div className="main-section">
       <h1 className="login">Sign Up</h1>
       <form>
@@ -19,7 +19,7 @@ const SignUp = () => (
         </div>
       </form>
     </div>
-  </>
-);
+  );
+}
 
 export default SignUp;
