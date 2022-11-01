@@ -6,6 +6,7 @@ import Appointment from './components/Appointment/Appointment';
 import Signup from './components/SignUp/Signup';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
+import AddDoctor from './components/AddDoctor/AddDoctor';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" exact element={<Home />} />
             <Route path="/signup" exact element={<Signup />} />
             <Route path="/login" exact element={<Login />} />
+            <Route path="/add-doctor" exact element={<AddDoctor />} />
           </Routes>
         </Router>
       </div>
