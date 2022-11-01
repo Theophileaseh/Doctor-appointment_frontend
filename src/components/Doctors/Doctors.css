@@ -1,0 +1,26 @@
+.doctors-section {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.single-doctor {
+  width: 20%;
+  background: #98bf0c;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.doctor-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
