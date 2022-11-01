@@ -8,7 +8,7 @@ const doctorReducer = (state = [], action) => {
   switch (action.type) {
     case GET_DOCTORS:
       return action.payload;
-    
+
     case ADD_DOCTORS:
       return action.payload;
 
