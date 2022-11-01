@@ -1,0 +1,189 @@
+.main {
+  position: relative;
+  width: 100%;
+}
+
+.pageHeader {
+  margin: 4.5rem auto 0 auto;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+
+.pageHeader h3 {
+  text-transform: none;
+  font-size: 1rem;
+  color: var(--silver);
+}
+
+.pageHeader div {
+  margin: 3rem auto;
+  width: 15vw;
+  border-bottom: 0.2rem  dotted var(--silver);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  opacity: 0;
+}
+
+.cardsContainerShow {
+  opacity: 1;
+  transition: all 0.35s ease-in;
+}
+
+.prevBtn {
+  margin-bottom: 15rem;
+  padding: 0.75rem 0.4rem;
+  align-items: center;
+  border: none;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  background-color: transparent;
+  color: white;
+}
+
+.nextBtn {
+  margin-bottom: 15rem;
+  padding: 0.75rem 0.4rem;
+  border: none;
+  border-start-start-radius: 1.5rem;
+  border-end-start-radius: 1.5rem;
+  background-color: transparent;
+  color: white;
+}
+
+.nextSvg,
+.prevSvg {
+  width: 20px;
+  height: 20px;
+  fill: var(--dark-gray);
+}
+
+.card {
+  text-align: center;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card p {
+  margin: 0;
+}
+
+.bgImage {
+  margin: auto;
+  background-color: var(--apple-green);
+  max-width: 12rem;
+  height: 12rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.5rem 0.5rem var(--silver);
+}
+
+.info {
+  margin: 2.5rem 0;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: black;
+  font-weight: bold;
+}
+
+.hr {
+  max-width: 15rem;
+  margin: 1rem auto;
+  border-bottom: 0.2rem  dotted var(--silver);
+}
+
+.desc {
+  margin: auto;
+  max-width: 15rem;
+  color: #464646;
+}
+
+.desc p {
+  font-size: 0.75rem;
+}
+
+.detailsBtn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--apple-green);
+  color: white;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 350px) {
+  .nextSvg,
+  .prevSvg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pageHeader h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  .pageHeader h3 {
+    text-transform: none;
+    font-size: 1.25rem;
+    color: var(--silver);
+  }
+
+  .carousel {
+    justify-content: space-between;
+  }
+
+  .prevBtn {
+    margin-bottom: 5rem;
+    padding: 1rem 1rem 1rem 2.5rem;
+    background-color: var(--silver);
+  }
+
+  .nextBtn {
+    margin-bottom: 5rem;
+    padding: 1rem 2.5rem 1rem 1rem;
+    background-color: var(--apple-green);
+  }
+
+  .nextSvg,
+  .prevSvg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  .desc p {
+    font-size: 1rem;
+  }
+}

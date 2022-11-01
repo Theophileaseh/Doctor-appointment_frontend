@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { addDoctors } from '../../redux/doctors';
 // import './AddDoctors.css';
 import '../SignUp/Signup.css';
 
@@ -7,26 +8,26 @@ function AddDoctorsForm() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
-  const authUsers = (e) => {
+  const adddoctor = (e) => {
     e.preventDefault();
 
-    const AddDoctors = {
+    const newDoctor = {
       email: e.target[0].value,
       password: e.target[1].value,
 
     };
-    dispatch((AddDoctors, { type: 'CREATE_DOCTORS' }));
+    dispatch((addDoctors(newDoctor, { type: 'CREATE_DOCTORS' })));
   };
 
   useEffect(() => {
-    if (user.username) {
+    if (user.a) {
       window.location = '/doctors';
     }
   });
 
   return (
     <div className="signup-container">
-      <form className="sinup-form" onSubmit={authUsers}>
+      <form className="sinup-form" onSubmit={adddoctor}>
         <h2>ADD DOCTORS</h2>
         <input type="text" className="form-input" name="name" required placeholder="doctor" />
         <input type="text" className="form-input" name="specialization" required placeholder="specialization" />
