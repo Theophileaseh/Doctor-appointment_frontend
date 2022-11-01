@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, axios } from 'react';
 import { useParams } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
 import './DoctorsDetails.css';
 
-const DoctorsDetails = () => {
-
+function DoctorsDetails() {
   const { ids } = useParams();
 
+  // eslint-disable-next-line no-undef
   const dispatch = useDispatch();
 
   const [data, setData] = useState([]);
@@ -30,11 +30,11 @@ const DoctorsDetails = () => {
       <div className="doctors-details">
         <p className="doctors-name">{myDoctor.name}</p>
         <p className="doctors-specialty">{myDoctor.specialization}</p>
-        <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button> 
+        <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button>
       </div>
-      
+
     </div>
-  )
+  );
 }
 
 export default DoctorsDetails;
