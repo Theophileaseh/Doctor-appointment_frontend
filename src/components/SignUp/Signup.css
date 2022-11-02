@@ -34,3 +34,9 @@
   color: #637c07;
   width: max-content;
 }
+
+@media screen and (max-width: 768px) {
+  .sinup-form {
+    width: 80%;
+  }
+}

@@ -25,7 +25,7 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/add-doctor" exact element={<AddDoctor />} />
             <Route path="/doctors" exact element={<Doctors />} />
-            <Route path="/doctors/1" exact element={<DoctorsDetails />} />
+            <Route path="/doctors/:id" exact element={<DoctorsDetails />} />
 
           </Routes>
         </Router>

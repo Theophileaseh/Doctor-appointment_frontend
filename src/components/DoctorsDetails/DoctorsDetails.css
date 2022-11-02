@@ -7,3 +7,50 @@
   align-items: center;
 }
 
+.doctors-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctors-main-image {
+  width: 100%;
+}
+
+.doctors-details {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+}
+
+.doctors-name {
+  font-size: 20px;
+  color: #98bf0c;
+  font-weight: 700;
+}
+
+.doctors-specialty {
+  font-size: 20px;
+  color: grey;
+}
+
+.doctors-details span {
+  color: #98bf0c;
+}
+
+.doctors-appointment-button {
+  border: none;
+  background: #98bf0c;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .doctors-details-container {
+    flex-direction: column;
+  }
+}

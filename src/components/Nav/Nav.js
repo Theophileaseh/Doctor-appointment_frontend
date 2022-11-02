@@ -35,11 +35,9 @@ function Nav() {
             <img className="logo" src={logo} alt="logo" />
           </div>
           <div className="navbar-main-menu">
-            <NavLink to="/" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
+            <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
             <NavLink style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setModal}>Add Appointment</NavLink>
             <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
-            <NavLink to="/c" style={({ isActive }) => activeLink(isActive)} className="nav-links">Add Doctor</NavLink>
-            <NavLink to="/d" style={({ isActive }) => activeLink(isActive)} className="nav-links">Remove Doctor</NavLink>
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">

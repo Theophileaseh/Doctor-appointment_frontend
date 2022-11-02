@@ -126,5 +126,6 @@
 @media screen and (max-width: 768px) {
   .navbar {
     width: 90%;
+    left: -75%;
   }
 }
