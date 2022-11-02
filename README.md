@@ -13,7 +13,6 @@ Our app is based on a test-a-drive application, which allows a user to set appoi
 - VisualStudio Code, Git, & GitHub;
 
 ## Pre-requisites
-
 - NodeJs (v. 14.17)
 - YarnJs (v. 1.22.10)
 - Git
@@ -54,18 +53,26 @@ When the tests are finished, just hit `q` key to leave the watch mode for the te
 
 ## Authors
 
-👨‍💻 ****
+👨‍💻 **NWACHAN THEOPHILE**
+- GitHub: [@Theophileaseh](https://github.com/Theophileaseh)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [Nwachan Theophile](https://www.linkedin.com/in/nwachan-theophile/)
+
+👨‍💻 **FELIX OUMA**
+- GitHub: [@Felix45](https://github.com/Felix45)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [Felix Oum](https://www.linkedin.com/in/felix-ouma/)
 
 
-👨‍💻 ****
+👨‍💻 **SILVIA TOFANA**
+- GitHub: [@silviatofana](https://github.com/silviatofana)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [Silvia Tofana](https://www.linkedin.com/in/silviatofana/)
 
-
-
-👨‍💻 ****
-
-
-👨‍💻 ****
-
+👨‍💻 **BASIT KOREDE**
+- GitHub: [@BasitKorede](https://github.com/BasitKorede)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [Basit Korede](https://www.linkedin.com/in/basit-korede/)
 
 ## 🤝 Contributing
 
@@ -80,7 +87,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
-- []()
+- [Stack overflow](https://stackoverflow.com/)
 - [Rails Guides](https://guides.rubyonrails.org/index.html)
 
 ## 📝 License
