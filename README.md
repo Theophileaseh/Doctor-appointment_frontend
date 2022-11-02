@@ -78,7 +78,8 @@ When the tests are finished, just hit `q` key to leave the watch mode for the te
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to comments and raise any [issue](https://github.com/mariordgez/final-capstone-rails/issues) for this milestone.
+Feel free to comments and raise any [issue](https://github.com/silviatofana/Doctor-appointment_backend
+) for this milestone.
 
 ## Show your support
 
