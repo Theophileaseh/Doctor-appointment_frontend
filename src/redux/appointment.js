@@ -21,8 +21,12 @@ const appointmentReducer = (state = [], action) => {
   }
 };
 
-export const getAppointments = () => (dispatch) => {
-  axios.get('patient/appointments').then((res) => {
+export const getAppointments = (userToken) => (dispatch) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: userToken,
+  };
+  axios.get('patient/appointments', { headers }).then((res) => {
     dispatch({
       type: GET_APPOINTMENTS,
       payload: res.data,

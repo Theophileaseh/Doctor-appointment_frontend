@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
@@ -12,6 +12,7 @@ import './Nav.css';
 import { getAppointments } from '../../redux/appointment';
 
 function Nav() {
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const setModal = () => {
@@ -29,7 +30,8 @@ function Nav() {
   };
 
   const unleashApps = () => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
+    const userToken = user.token;
+    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   };
 
   return (

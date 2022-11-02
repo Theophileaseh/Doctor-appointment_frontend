@@ -15,7 +15,7 @@ function Appointment() {
       doctor_id: app.doctor_id,
     };
 
-    dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
+    dispatch(removeAppointments(removedAppointment, { type: 'EMOVE_APPOINTMENTS' }));
   };
 
   const appoints = allAppointments.appointments;
@@ -47,10 +47,10 @@ function Appointment() {
             {appoints.map((app) => (
               <tr className="appointments-table-data" key={app.id}>
                 <td className="appointments-row-data">{app.doctor_name}</td>
-                <td className="appointments-row-data">{app.date}</td>
-                <td className="appointments-row-data">{app.time}</td>
+                <td className="appointments-row-data">{app.date_of_appointment}</td>
+                <td className="appointments-row-data">{app.time_of_appointment.toLocaleTimeString('en-US')}</td>
                 <td className="appointments-row-data">{app.description}</td>
-                <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={removeAppointment(app.id)}>Delete</button></td>
+                <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={removeAppointment(app)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
