@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from '../../base/axios';
@@ -29,3 +30,17 @@ const Doctors = () => {
 }
 
 export default Doctors;
+=======
+import React from 'react';
+import './Doctors.css';
+
+const Doctors = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Doctors;
+>>>>>>> 939347290aa81232e7d0186fa8fd0f139494b506
