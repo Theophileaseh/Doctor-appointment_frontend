@@ -11,11 +11,12 @@ function Doctors() {
 
   useEffect(() => {
     allDoctors();
+    console.log('usert', user);
   }, []);
 
-  if (!user.token) {
-    window.location = '/login';
-  }
+  // if (!user.token) {
+  //   window.location = '/login';
+  // }
   return (
     <div className="doctors-container">
       <div className="doctors-section">
