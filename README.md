@@ -1,4 +1,4 @@
-# Front end Doctor Appointment
+# Front End Doctor Appointment
 
 Our app is based on a test-a-drive application, which allows a user to set appointment, or create a reservation to meet a specialized Doctor.
 
@@ -35,8 +35,8 @@ git clone git@github.com:mariordgez/final-capstone-react.git
 
 ```sh
 cd final-capstone-react
-yarn
-yarn start
+code .
+npm start
 ```
 
 This should start your local server in [http://localhost:3000/](http://localhost:3000/). To stop it, hit `<CTRL> + C` on your keyboard.
@@ -46,7 +46,7 @@ This should start your local server in [http://localhost:3000/](http://localhost
 To test the App's components and logic, please, run the following command:
 
 ```sh
-yarn test --watchAll
+npm test --watchAll
 ```
 
 When the tests are finished, just hit `q` key to leave the watch mode for the tests.
