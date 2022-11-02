@@ -1,3 +1,4 @@
+
 .appointments-container {
   background: #fff;
 }
@@ -60,5 +61,4 @@
   .my-appointments-table {
     overflow-x: auto;
   }
-  
 }

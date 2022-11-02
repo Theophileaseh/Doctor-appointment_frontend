@@ -15,8 +15,7 @@ function Doctors() {
     <div className="doctors-container">
       <div className="doctors-section">
         {data.map((doctor) => (
-          // eslint-disable-next-line react/jsx-key
-          <Link to={`/doctors/${doctor.id}`}>
+          <Link to={`/doctors/${doctor.id}`} key={doctor.id}>
             <div className="single-doctor">
               <img src={doctor.picture} alt="doctor" className="doctor-image" />
               <p className="doctor-name">{doctor.name}</p>

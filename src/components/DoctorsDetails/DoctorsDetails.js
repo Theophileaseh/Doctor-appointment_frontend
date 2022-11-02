@@ -1,17 +1,16 @@
-import React, { useEffect, useState, axios } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
+import axios from '../../base/axios';
 import './DoctorsDetails.css';
 
 function DoctorsDetails() {
   const { ids } = useParams();
 
-  // eslint-disable-next-line no-undef
-  const dispatch = useDispatch();
-
   const [data, setData] = useState([]);
   const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
-
+  const dispatch = useDispatch();
   useEffect(() => {
     allDoctors();
   }, []);

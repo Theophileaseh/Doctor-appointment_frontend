@@ -1,3 +1,4 @@
+
 .add-appointment-modal {
   background: #98bf0c;
   height: 100vh;
@@ -61,9 +62,10 @@
   align-items: center;
 }
 
-
-
-.select-doctors, .city-input, .date-input, .submit-appointment {
+.select-doctors,
+.city-input,
+.date-input,
+.submit-appointment {
   font-size: 18px;
   padding: 7px;
   border-radius: 8px;
@@ -75,14 +77,7 @@
   background: #585a54;
   color: #fff;
   cursor: pointer;
-}
-
-.city-input:focus, .date-input:focus {
-  outline: none;
-}
-
-.select-doctors {
-  width: 100%;
+  width: max-content;
 }
 
 .city-input {
@@ -90,8 +85,13 @@
   height: 120px;
 }
 
-.submit-appointment {
-  width: max-content;
+.city-input:focus,
+.date-input:focus {
+  outline: none;
+}
+
+.select-doctors {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -107,7 +107,9 @@
     width: 100%;
   }
 
-  .select-doctors, .city-input, .date-input {
+  .select-doctors,
+  .city-input,
+  .date-input {
     width: 100%;
   }
 }

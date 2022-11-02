@@ -2,6 +2,7 @@ import axios from '../base/axios';
 
 const GET_APPOINTMENTS = 'doctora/redux/GET_APPOINTMENTS';
 const ADD_APPOINTMENTS = 'doctora/redux/ADD_APPOINTMENTS';
+const REMOVE_APPOINTMENTS = 'doctora/redux/REMOVE_APPOINTMENTS';
 
 // eslint-disable-next-line default-param-last
 const appointmentReducer = (state = [], action) => {
@@ -10,6 +11,9 @@ const appointmentReducer = (state = [], action) => {
       return action.payload;
 
     case ADD_APPOINTMENTS:
+      return action.payload;
+
+    case REMOVE_APPOINTMENTS:
       return action.payload;
 
     default:
@@ -26,10 +30,19 @@ export const getAppointments = () => (dispatch) => {
   });
 };
 
-export const addAppointments = () => (dispatch) => {
-  axios.post('appointments').then((res) => {
+export const addAppointments = (addsAppointments) => (dispatch) => {
+  axios.post('doctors/1/appointments', addsAppointments).then((res) => {
     dispatch({
       type: ADD_APPOINTMENTS,
+      payload: res.data,
+    });
+  });
+};
+
+export const removeAppointments = (removedAppointment, appId, doctorId) => (dispatch) => {
+  axios.delete(`doctors/${doctorId}/appointments/${appId}`, removedAppointment).then((res) => {
+    dispatch({
+      type: REMOVE_APPOINTMENTS,
       payload: res.data,
     });
   });
