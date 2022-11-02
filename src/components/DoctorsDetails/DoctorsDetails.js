@@ -9,8 +9,9 @@ function DoctorsDetails() {
   const user = useSelector((state) => state.user);
   const allDoctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
+  const ids = parseInt(id, 10);
 
-  const myDoctor = allDoctors && allDoctors.filter((cc) => (cc.id === id));
+  const myDoctor = allDoctors && allDoctors.filter((cc) => (cc.id === ids));
   const {
     name, picture, specialization, gender,
   } = myDoctor[0];

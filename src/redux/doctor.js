@@ -27,7 +27,11 @@ export const getDoctors = () => (dispatch) => {
 };
 
 export const addDoctors = (addDoctor) => (dispatch) => {
-  axios.post('doctors', addDoctor).then((res) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: addDoctor.token,
+  };
+  axios.post('doctors', addDoctor, { headers }).then((res) => {
     dispatch({
       type: ADD_DOCTORS,
       payload: res.data,

@@ -29,7 +29,7 @@ function AddDoctor() {
     window.location = '/login';
   };
 
-  if (!user.token) {
+  if (!user.token || user.role !== 'admin') {
     window.location = '/login';
   }
 

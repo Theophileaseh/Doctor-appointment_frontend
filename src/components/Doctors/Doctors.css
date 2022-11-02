@@ -8,7 +8,7 @@
 }
 
 .single-doctor {
-  width: 20%;
+  width: 50%;
   background: #98bf0c;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,10 @@
   height: 100px;
   width: 100px;
   border-radius: 100%;
+}
+
+.doctors-section a {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {
