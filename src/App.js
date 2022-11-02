@@ -8,8 +8,8 @@ import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 import DoctorsDetails from './components/DoctorsDetails/DoctorsDetails';
-import './App.css';
 import Doctors from './components/Doctors/Doctors';
+import './App.css';
 
 function App() {
   return (
