@@ -1,7 +1,7 @@
 .home-container {
   padding: 90px;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: #f2f2f2;
   position: fixed;
 }
@@ -37,4 +37,12 @@
 .doctora-link:hover {
   background: #98bf0c;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 90px 0;
+    height: 100vh;
+    width: 100%;
+  }
 }

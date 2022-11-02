@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeAppointments } from '../../redux/appointment';
+import { getAppointments, removeAppointments } from '../../redux/appointment';
 import './Appointment.css';
-import axios from '../../base/axios';
 
 function Appointment() {
-  const [data, setData] = useState([]);
-  const allAppointments = () => { axios.get('doctors/patient/appointments').then((res) => { setData(res.data); }); };
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-
-  useEffect(() => {
-    allAppointments();
-  }, []);
+  const allAppointments = useSelector((state) => state.appointment);
 
   const removeAppointment = (app) => {
-    const doctorId = app.doctor_id;
-    const appId = app.id;
     const removedAppointment = {
-      id: appId,
-      doctor_id: doctorId,
       token: user.token,
+      id: app.id,
+      doctor_id: app.doctor_id,
     };
 
     dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_Appointment' }));
   };
+
+  const appoints = allAppointments.appointments;
+
+  if (!user.token) {
+    window.location = '/login';
+  }
+  useEffect(() => {
+    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
+  });
+
   return (
     <div className="my-appointments-container">
       <div className="my-appointments-head">
@@ -42,7 +44,7 @@ function Appointment() {
             </tr>
           </thead>
           <tbody>
-            {data.map((app) => (
+            {appoints.map((app) => (
               <tr className="appointments-table-data" key={app.id}>
                 <td className="appointments-row-data">{app.doctor_name}</td>
                 <td className="appointments-row-data">{app.date}</td>

@@ -40,7 +40,6 @@ function AddAppointment() {
   };
 
   return (
-
     appointmentModalState.show === true ? (
 
       <div className="add-appointment-modal">
@@ -64,9 +63,10 @@ function AddAppointment() {
             <div className="doctors-date-time">
 
               <select className="select-doctors" required name="doctor" placeholder="Select">
-                <option>Select Doctor</option>
                 {data.map((doctor) => (
-                  <option key={doctor.id}>{doctor.name}</option>
+                  <option key={doctor.id} value={doctor.id}>
+                    {doctor.name}
+                  </option>
                 ))}
               </select>
               <input type="date" name="date" className="date-input" required />

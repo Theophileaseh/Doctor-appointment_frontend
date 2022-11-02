@@ -22,7 +22,7 @@ const appointmentReducer = (state = [], action) => {
 };
 
 export const getAppointments = () => (dispatch) => {
-  axios.get('appointments').then((res) => {
+  axios.get('patient/appointments').then((res) => {
     dispatch({
       type: GET_APPOINTMENTS,
       payload: res.data,
@@ -31,7 +31,12 @@ export const getAppointments = () => (dispatch) => {
 };
 
 export const addAppointments = (addsAppointments) => (dispatch) => {
-  axios.post('doctors/1/appointments', addsAppointments).then((res) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: addsAppointments.token,
+  };
+
+  axios.post(`doctors/${addsAppointments.doctor_id}/appointments`, addsAppointments, { headers }).then((res) => {
     dispatch({
       type: ADD_APPOINTMENTS,
       payload: res.data,
@@ -39,8 +44,12 @@ export const addAppointments = (addsAppointments) => (dispatch) => {
   });
 };
 
-export const removeAppointments = (removedAppointment, appId, doctorId) => (dispatch) => {
-  axios.delete(`doctors/${doctorId}/appointments/${appId}`, removedAppointment).then((res) => {
+export const removeAppointments = (removedAppointment) => (dispatch) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: removedAppointment.token,
+  };
+  axios.delete(`doctors/${removedAppointment.doctor_id}/appointments/${removedAppointment.id}`, removedAppointment, { headers }).then((res) => {
     dispatch({
       type: REMOVE_APPOINTMENTS,
       payload: res.data,

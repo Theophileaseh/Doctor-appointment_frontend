@@ -19,8 +19,12 @@ function Login() {
   };
 
   useEffect(() => {
-    if (user.username) {
+    if (user.role === null && user.token) {
       window.location = '/doctors';
+    }
+
+    if (user.role === 'admin' && user.token) {
+      window.location = '/add-doctor';
     }
   });
 
