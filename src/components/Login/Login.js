@@ -19,7 +19,7 @@ function Login() {
   };
 
   useEffect(() => {
-    if (user.role === null && user.token) {
+    if (user.role === 'normal' && user.token) {
       window.location = '/doctors';
     }
 
