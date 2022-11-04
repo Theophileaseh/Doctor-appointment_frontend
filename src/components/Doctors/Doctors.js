@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { getAppointments } from '../../redux/appointment';
 import axios from '../../base/axios';
 import Doctor from './Doctor';
 import './Doctors.css';
