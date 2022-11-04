@@ -7,7 +7,11 @@ import './Doctors.css';
 function Doctors() {
   const user = useSelector((state) => state.user);
   const [data, setData] = useState([]);
-  const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: user.token,
+  };
+  const allDoctors = () => { axios.get('doctors', { headers }).then((res) => { setData(res.data); }); };
 
   useEffect(() => {
     allDoctors();
