@@ -26,10 +26,15 @@ function Signup() {
   };
 
   useEffect(() => {
-    if (user.id) {
+    if (user.role === 'normal' && user.token) {
+      window.location = '/login';
+    }
+
+    if (user.role === 'admin' && user.token) {
       window.location = '/login';
     }
   });
+
 
   return (
     <div className="signup-container">
