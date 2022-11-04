@@ -6,9 +6,6 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import appointmentModalReducer from './appointmentModal';
-import doctorReducer from './doctor';
-import appointmentReducer from './appointment';
-
 import userReducer from './user';
 
 const persistConfig = {
@@ -19,8 +16,6 @@ const persistConfig = {
 
 const reducers = combineReducers({
   appointmentModal: appointmentModalReducer,
-  doctor: doctorReducer,
-  appointment: appointmentReducer,
   user: userReducer,
 });
 
