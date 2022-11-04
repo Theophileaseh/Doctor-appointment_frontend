@@ -1,12 +1,21 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getAppointments, removeAppointments } from '../../redux/appointment';
+import { useSelector } from 'react-redux';
 import './Appointment.css';
 
 function Appointment() {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const allAppointments = useSelector((state) => state.appointment);
+ const user = useSelector((state) => state.user);
+  const [data, setData] = useState([]);
+  const [datas, setDatas] = useState([]);
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: user.token,
+  };
+  const allAppointments = () => { axios.get('patient/appointments, { headers }).then((res) => { setData(res.data); }); };
+
+  useEffect(() => {
+    allAppointments();
+  }, []);
+
 
   const removeAppointment = (app) => {
     const removedAppointment = {
@@ -15,7 +24,8 @@ function Appointment() {
       doctor_id: app.doctor_id,
     };
 
-    dispatch(removeAppointments(removedAppointment, { type: 'EMOVE_APPOINTMENTS' }));
+    axios.delete(`doctors/${removedAppointment.doctor_id}/appointments/${removedAppointment.id}`, { headers }).then((res) => { setDatas(res.data); }); };
+
   };
 
   const appoints = allAppointments.appointments;
@@ -23,10 +33,8 @@ function Appointment() {
   if (!user.token) {
     window.location = '/login';
   }
-  useEffect(() => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
-  });
-
+  
+    
   return (
     <div className="my-appointments-container">
       <div className="my-appointments-head">
@@ -47,7 +55,7 @@ function Appointment() {
             {appoints.map((app) => (
               <tr className="appointments-table-data" key={app.id}>
                 <td className="appointments-row-data">{app.doctor_name}</td>
-                <td className="appointments-row-data">{app.date_of_appointment}</td>
+                <td className="appointments-row-data">{app.date_of_a0ppointment}</td>
                 <td className="appointments-row-data">{new Date(app.time_of_appointment).toLocaleTimeString('en-US')}</td>
                 <td className="appointments-row-data">{app.description}</td>
                 <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={() => removeAppointment(app)}>Delete</button></td>
