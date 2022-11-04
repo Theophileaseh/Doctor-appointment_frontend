@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
@@ -29,11 +29,6 @@ function Nav() {
     window.location = '/login';
   };
 
-  const unleashApps = () => {
-    const userToken = user.token;
-    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
-  };
-
   return (
     location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
@@ -44,7 +39,7 @@ function Nav() {
           <div className="navbar-main-menu">
             <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
             <NavLink className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={unleashApps}>My Appointments</NavLink>
+            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">
