@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import './Appointment.css';
 
 function Appointment() {
- const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const [data, setData] = useState([]);
   const [datas, setDatas] = useState([]);
   const headers = {
