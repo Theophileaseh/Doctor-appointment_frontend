@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
