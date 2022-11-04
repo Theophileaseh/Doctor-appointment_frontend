@@ -15,7 +15,7 @@ function Appointment() {
       doctor_id: app.doctor_id,
     };
 
-    dispatch(removeAppointments(removedAppointment, { type: 'EMOVE_APPOINTMENTS' }));
+    dispatch(removeAppointments(removedAppointment, { type: 'REMOVE_APPOINTMENTS' }));
   };
 
   const appoints = allAppointments.appointments;
@@ -23,8 +23,10 @@ function Appointment() {
   if (!user.token) {
     window.location = '/login';
   }
+  
+  const userToken = user.token;
   useEffect(() => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
+    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
 
   return (
