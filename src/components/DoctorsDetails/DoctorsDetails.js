@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
@@ -7,11 +7,17 @@ import './DoctorsDetails.css';
 function DoctorsDetails() {
   const { id } = useParams();
   const user = useSelector((state) => state.user);
-  const allDoctors = useSelector((state) => state.doctor);
+  const [data, setData] = useState([]);
+  const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
+
+  useEffect(() => {
+    allDoctors();
+  }, []);
+
   const dispatch = useDispatch();
   const ids = parseInt(id, 10);
 
-  const myDoctor = allDoctors && allDoctors.filter((cc) => (cc.id === ids));
+  const myDoctor = data.filter((cc) => (cc.id === ids));
   const {
     name, picture, specialization, gender,
   } = myDoctor[0];
