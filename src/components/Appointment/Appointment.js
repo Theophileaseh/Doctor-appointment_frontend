@@ -48,7 +48,7 @@ function Appointment() {
               <tr className="appointments-table-data" key={app.id}>
                 <td className="appointments-row-data">{app.doctor_name}</td>
                 <td className="appointments-row-data">{app.date_of_appointment}</td>
-                <td className="appointments-row-data">{app.time_of_appointment.toLocaleTimeString('en-US')}</td>
+                <td className="appointments-row-data">{new Date(app.time_of_appointment).toLocaleTimeString('en-US')}</td>
                 <td className="appointments-row-data">{app.description}</td>
                 <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={removeAppointment(app)}>Delete</button></td>
               </tr>
