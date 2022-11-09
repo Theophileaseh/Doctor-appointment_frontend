@@ -27,6 +27,7 @@ function Nav() {
   const signOut = () => {
     dispatch(loginusers([]));
     window.location = '/login';
+    localStorage.clear();
   };
 
   const unleashApps = () => {
