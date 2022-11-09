@@ -42,9 +42,9 @@ function Nav() {
             <img className="logo" src={logo} alt="logo" />
           </div>
           <div className="navbar-main-menu">
-            <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
+            <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setSidebar(false)}>Doctors</NavLink>
             <NavLink className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={unleashApps}>My Appointments</NavLink>
+            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={unleashApps(); setSidebar(false)}>My Appointments</NavLink>
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAppointments } from '../../redux/appointment';
 import axios from '../../base/axios';
 import Doctor from './Doctor';
 import './Doctors.css';
@@ -16,6 +17,10 @@ function Doctors() {
   if (!user.token) {
     window.location = '/login';
   }
+  const userToken = user.token;
+  useEffect(() => {
+    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
+  });
   return (
     <div className="doctors-container">
       <div className="doctors-section">
