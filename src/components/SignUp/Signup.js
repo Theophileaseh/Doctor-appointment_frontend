@@ -35,7 +35,6 @@ function Signup() {
     }
   });
 
-
   return (
     <div className="signup-container">
       <form className="sinup-form" onSubmit={addusers}>

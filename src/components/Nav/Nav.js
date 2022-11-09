@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
@@ -9,10 +9,8 @@ import { showModal } from '../../redux/appointmentModal';
 import { loginusers } from '../../redux/user';
 import logo from '../../assets/doctora.png';
 import './Nav.css';
-import { getAppointments } from '../../redux/appointment';
 
 function Nav() {
-  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const setModal = () => {
@@ -30,11 +28,6 @@ function Nav() {
     localStorage.clear();
   };
 
-  const unleashApps = () => {
-    const userToken = user.token;
-    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
-  };
-
   return (
     location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
@@ -45,7 +38,7 @@ function Nav() {
           <div className="navbar-main-menu">
             <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setSidebar(false)}>Doctors</NavLink>
             <NavLink className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={unleashApps(); setSidebar(false)}>My Appointments</NavLink>
+            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={setSidebar(false)}>My Appointments</NavLink>
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">
