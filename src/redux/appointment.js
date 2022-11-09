@@ -53,7 +53,7 @@ export const removeAppointments = (removedAppointment) => (dispatch) => {
     'Content-Type': 'application/json',
     Authorization: removedAppointment.token,
   };
-  axios.delete(`doctors/${removedAppointment.doctor_id}/appointments/${removedAppointment.id}`, removedAppointment, { headers }).then((res) => {
+  axios.delete(`doctors/${removedAppointment.doctor_id}/appointments/${removedAppointment.id}`, { headers }).then((res) => {
     dispatch({
       type: REMOVE_APPOINTMENTS,
       payload: res.data,
