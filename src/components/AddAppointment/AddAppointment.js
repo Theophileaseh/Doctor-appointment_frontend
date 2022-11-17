@@ -39,6 +39,8 @@ function AddAppointment() {
     dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
     const userToken = user.token;
     dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
+
+    hidesModal();
   };
   return (
     appointmentModalState.show === true ? (

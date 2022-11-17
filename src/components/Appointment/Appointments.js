@@ -1,21 +1,26 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAppointments } from '../../redux/appointment';
+ import { getAppointments } from '../../redux/appointment';
 import Appointment from './Appointment';
 import './Appointment.css';
 
 function Appointments() {
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
   const allAppointments = useSelector((state) => state.appointment);
   const user = useSelector((state) => state.user);
 
-  const appoints = allAppointments.appointments;
+  const userToken = user.token;
+  console.log(userToken);
+
+   const appoints = allAppointments.appointments;
+
+   console.log(appoints, allAppointments);
 
   if (!user.token) {
     window.location = '/login';
   }
   useEffect(() => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
+    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
 
   return (

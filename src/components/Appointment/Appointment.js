@@ -15,8 +15,6 @@ function Appointment(props) {
     };
 
     dispatch(removeAppointments(removedappointment, { type: 'REMOVE_APPOINTMENTS' }));
-    const userToken = user.token;
-    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   };
 
   if (!user.token) {

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loginusers } from '../../redux/user';
 import '../SignUp/Signup.css';
 
 function Login() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
@@ -20,11 +22,11 @@ function Login() {
 
   useEffect(() => {
     if (user.role === 'normal' && user.token) {
-      window.location = '/doctors';
+      navigate('/doctors');
     }
 
     if (user.role === 'admin' && user.token) {
-      window.location = '/add-doctor';
+      navigate('/add-doctor');
     }
   });
 
