@@ -13,7 +13,7 @@ function DoctorsDetails() {
 
   const myDoctor = allDoctors && allDoctors.filter((cc) => (cc.id === ids));
   const {
-    name, picture, specialization, gender,
+    name, photo, specialty, bio,
   } = myDoctor[0];
 
   const setModal = () => {
@@ -27,17 +27,17 @@ function DoctorsDetails() {
   return (
     <div className="doctors-details-container">
       <div className="doctors-image">
-        <img src={picture} alt="doctor" className="doctors-main-image" />
+        <img src={photo} alt="doctor" className="doctors-main-image" />
       </div>
       <div className="doctors-details">
         <p className="doctors-name">{name}</p>
         <p className="doctors-specialty">
           Specialty:
-          <span>{specialization}</span>
+          <span>{specialty}</span>
         </p>
         <p className="doctors-specialty">
           Gender:
-          <span>{gender}</span>
+          <span>{bio}</span>
         </p>
         <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button>
       </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineClose } from 'react-icons/ai';
 import axios from '../../base/axios';
-import { addAppointments, getAppointments } from '../../redux/appointment';
+import { addAppointments } from '../../redux/appointment';
 import { hideModal } from '../../redux/appointmentModal';
 import './AddAppointment.css';
 
@@ -29,19 +29,17 @@ function AddAppointment() {
 
     const addsAppointments = {
       token: user.token,
-      user_id: user.user_id,
+      user_id: user.id,
       doctor_id: doctorId,
-      date_of_appointment: e.target[1].value,
+      day_of_appointment: e.target[1].value,
       time_of_appointment: e.target[2].value,
-      description: e.target[3].value,
+      message: e.target[3].value,
     };
 
     dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
-    const userToken = user.token;
-    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
-
     hidesModal();
   };
+
   return (
     appointmentModalState.show === true ? (
 

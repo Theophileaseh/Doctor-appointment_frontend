@@ -18,7 +18,7 @@ const userReducer = (state = [], action) => {
 };
 
 export const loginusers = (loginUser) => (dispatch) => {
-  axios.post('../../auth/login', loginUser).then((res) => {
+  axios.post('../../login', loginUser).then((res) => {
     dispatch({
       type: LOGIN_USER,
       payload: res.data,
@@ -27,7 +27,7 @@ export const loginusers = (loginUser) => (dispatch) => {
 };
 
 export const addUsers = (newUser) => (dispatch) => {
-  axios.post('auth/signup', newUser).then((res) => {
+  axios.post('users', newUser).then((res) => {
     dispatch({
       type: ADD_USERS,
       payload: res.data,

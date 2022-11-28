@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeAppointments, getAppointments } from '../../redux/appointment';
+import { removeAppointments } from '../../redux/appointment';
 
 function Appointment(props) {
   const dispatch = useDispatch();
@@ -20,11 +20,6 @@ function Appointment(props) {
   if (!user.token) {
     window.location = '/login';
   }
-
-  const userToken = user.token;
-  useEffect(() => {
-    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
-  });
 
   const appointment = props;
   const {

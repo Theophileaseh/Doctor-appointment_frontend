@@ -7,7 +7,6 @@ import { TiSocialGooglePlus } from 'react-icons/ti';
 import { NavLink, useLocation } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
 import { loginusers } from '../../redux/user';
-import { getAppointments } from '../../redux/appointment';
 import logo from '../../assets/doctora.png';
 import './Nav.css';
 
@@ -29,10 +28,6 @@ function Nav() {
     localStorage.clear();
   };
 
-  const unleashApps = () => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
-  };
-
   return (
     location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
@@ -43,7 +38,7 @@ function Nav() {
           <div className="navbar-main-menu">
             <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
             <NavLink className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={unleashApps}>My Appointments</NavLink>
+            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">

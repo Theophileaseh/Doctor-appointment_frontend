@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
- import { getAppointments } from '../../redux/appointment';
+import { getAppointments } from '../../redux/appointment';
 import Appointment from './Appointment';
 import './Appointment.css';
 
 function Appointments() {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const allAppointments = useSelector((state) => state.appointment);
   const user = useSelector((state) => state.user);
 
   const userToken = user.token;
   console.log(userToken);
-
-   const appoints = allAppointments.appointments;
-
-   console.log(appoints, allAppointments);
 
   if (!user.token) {
     window.location = '/login';
@@ -22,6 +18,10 @@ function Appointments() {
   useEffect(() => {
     dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
+
+  const appoints = allAppointments.appointments;
+
+  console.log(appoints, allAppointments);
 
   return (
     <div className="my-appointments-container">
@@ -40,7 +40,7 @@ function Appointments() {
             </tr>
           </thead>
           <tbody>
-            {appoints.map((app) => (
+            {appoints && appoints.map((app) => (
               <Appointment appointment={app} key={app.id} />
             ))}
           </tbody>

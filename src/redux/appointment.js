@@ -26,7 +26,7 @@ export const getAppointments = (userToken) => (dispatch) => {
     'Content-Type': 'application/json',
     Authorization: userToken,
   };
-  axios.get('patient/appointments', { headers }).then((res) => {
+  axios.get('appointments', { headers }).then((res) => {
     dispatch({
       type: GET_APPOINTMENTS,
       payload: res.data,
@@ -40,7 +40,7 @@ export const addAppointments = (addsAppointments) => (dispatch) => {
     Authorization: addsAppointments.token,
   };
 
-  axios.post(`doctors/${addsAppointments.doctor_id}/appointments`, addsAppointments, { headers }).then((res) => {
+  axios.post('appointments', addsAppointments, { headers }).then((res) => {
     dispatch({
       type: ADD_APPOINTMENTS,
       payload: res.data,
@@ -53,7 +53,7 @@ export const removeAppointments = (removedAppointment) => (dispatch) => {
     'Content-Type': 'application/json',
     Authorization: removedAppointment.token,
   };
-  axios.delete(`doctors/${removedAppointment.doctor_id}/appointments/${removedAppointment.id}`, { headers }).then((res) => {
+  axios.delete(`appointments/${removedAppointment.id}`, { headers }).then((res) => {
     dispatch({
       type: REMOVE_APPOINTMENTS,
       payload: res.data,
