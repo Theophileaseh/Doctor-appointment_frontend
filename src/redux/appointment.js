@@ -11,7 +11,7 @@ const appointmentReducer = (state = [], action) => {
       return action.payload;
 
     case ADD_APPOINTMENTS:
-      return { ...state.appointment.push(action.payload) }
+      return { ...state.appointment.push(action.payload) };
 
     case REMOVE_APPOINTMENTS:
       return { ...state.appointment.filter((appoint) => appoint !== action.payload) };

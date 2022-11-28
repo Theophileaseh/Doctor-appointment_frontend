@@ -33,6 +33,11 @@
   font-family: cursive;
 }
 
+.appointment-info span {
+  color: #3e3c38;
+  font-weight: 700;
+}
+
 .add-appointment-section {
   width: 70%;
   margin: 0 auto;
@@ -95,10 +100,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  add-appointment-modal {
+  .add-appointment-modal {
     position: relative;
   }
-  
+
   .add-appointment-form {
     flex-direction: column;
   }

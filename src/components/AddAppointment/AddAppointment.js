@@ -51,8 +51,10 @@ function AddAppointment() {
         </div>
         <div className="appointment-info">
           <p>
-            Hello
-            <span>{user.username}</span>
+            Hello &nbsp;
+            <span>
+              {user.username}
+            </span>
             , welcome to Doctora App appointment page.
             Here you can make private appointments with any Doctor of your
             choice for a specified date and location.
