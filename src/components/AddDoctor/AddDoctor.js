@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDoctors } from '../../redux/doctor';
-import { loginusers } from '../../redux/user';
-import logo from '../../assets/doctora.png';
+import AdminHeader from '../AdminHeader/AdminHeader';
 import '../SignUp/Signup.css';
 import './AddDoctor.css';
+import { Link } from 'react-router-dom';
 
 function AddDoctor() {
   const user = useSelector((state) => state.user);
@@ -19,16 +19,13 @@ function AddDoctor() {
       name: e.target[0].value,
       specialty: e.target[1].value,
       photo: e.target[2].value,
+      bio: e.target[3].value,
     };
 
     dispatch(addDoctors(addDoctor, { type: 'ADD_DOCTORS' }));
   };
 
-  const signOut = () => {
-    dispatch(loginusers([]));
-    window.location = '/login';
-    localStorage.clear();
-  };
+
 
   if (!user.token || user.role !== 'admin') {
     window.location = '/login';
@@ -36,24 +33,15 @@ function AddDoctor() {
 
   return (
     <div className="signup-container">
-      <div className="header">
-        <div className="logos">
-          <img src={logo} alt="logo" className="admin-logo" />
-        </div>
-        <div className="signs-out">
-          <p className="welcome">
-            Welcome
-            {user.username}
-          </p>
-          <button type="button" className="admin-signout" onClick={signOut}>Log out</button>
-        </div>
-      </div>
+      <AdminHeader />
       <form className="sinup-form" onSubmit={addsDoctor}>
         <h2>Add New Doctor</h2>
         <input type="text" className="form-input" name="name" required placeholder="name" />
         <input type="text" className="form-input" name="specialty" required placeholder="Specialty" />
         <input type="text" className="form-input" name="photo" required placeholder="Add Link to profile photo" />
+        <textarea className="bio-form-input" placeholder="Add Bio" required />
         <button type="submit" className="sigup-submit-btn">Add Doctor</button>
+        <Link className="admin-back-link" to="/admin-doctors">Back</Link>
       </form>
 
     </div>

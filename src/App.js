@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 import DoctorsDetails from './components/DoctorsDetails/DoctorsDetails';
 import Doctors from './components/Doctors/Doctors';
+import AdminDoctors from './components/AdminDoctors/AdminDoctors';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/add-doctor" exact element={<AddDoctor />} />
             <Route path="/doctors" exact element={<Doctors />} />
+            <Route path="/admin-doctors" exact element={<AdminDoctors />} />
             <Route path="/doctors/:id" exact element={<DoctorsDetails />} />
 
           </Routes>

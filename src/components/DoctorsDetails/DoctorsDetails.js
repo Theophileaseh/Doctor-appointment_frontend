@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { showModal } from '../../redux/appointmentModal';
 import './DoctorsDetails.css';
 import { setDoctor } from '../../redux/doctor';
 
 function DoctorsDetails() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const user = useSelector((state) => state.user);
   const allDoctors = useSelector((state) => state.doctor);
@@ -26,6 +27,10 @@ function DoctorsDetails() {
 
   if (!user.token) {
     window.location = '/login';
+  }
+
+  if (user.role === 'admin' && user.token) {
+    navigate('/admin-doctors');
   }
   
 

@@ -1,0 +1,15 @@
+.add-doctor-section {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+    justify-content: flex-end;
+}
+
+.add-doctor-link {
+    text-decoration: none;
+    background: #98bf0c;
+    width: max-content;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}

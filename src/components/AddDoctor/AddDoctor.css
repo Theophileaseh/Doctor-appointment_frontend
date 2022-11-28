@@ -1,12 +1,13 @@
-.header {
-  display: flex;
-  height: 100px;
-  justify-content: space-between;
-  align-items: center;
-  background: grey;
-  padding: 0 30px;
+.admin-back-link {
+  color: #e2e2e2
 }
 
-.admin-logo {
-  width: 90px;
+.bio-form-input {
+  height: 120px;
+    border-radius: 3px;
+    border: none;
+}
+
+.bio-form-input:focus {
+  outline: none;
 }

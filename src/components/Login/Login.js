@@ -26,7 +26,7 @@ function Login() {
     }
 
     if (user.role === 'admin' && user.token) {
-      navigate('/add-doctor');
+      navigate('/admin-doctors');
     }
   });
 

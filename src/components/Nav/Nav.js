@@ -29,7 +29,7 @@ function Nav() {
   };
 
   return (
-    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' ? '' : (
+    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' || location.pathname === '/admin-doctors' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
         <div className="navbar-menu">
           <div className="navbar-menu-logo">
