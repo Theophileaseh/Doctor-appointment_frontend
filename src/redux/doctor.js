@@ -2,6 +2,7 @@ import axios from '../base/axios';
 
 const GET_DOCTORS = 'doctora/redux/GET_DOCTORS';
 const ADD_DOCTORS = 'doctora/redux/ADD_DOCTORS';
+const SET_DOCTOR = 'doctora/redux/SET_DOCTOR';
 
 // eslint-disable-next-line default-param-last
 const doctorReducer = (state = [], action) => {
@@ -10,12 +11,17 @@ const doctorReducer = (state = [], action) => {
       return action.payload;
 
     case ADD_DOCTORS:
-      return action.payload;
+      return { ...state.doctor.push(action.payload) };
+
+    case SET_DOCTOR:
+      return { ...state.doctor.filter((doc) => doc.id === action.payload) };
 
     default:
       return state;
   }
+  
 };
+
 
 export const getDoctors = () => (dispatch) => {
   axios.get('doctors').then((res) => {
@@ -36,6 +42,13 @@ export const addDoctors = (addDoctor) => (dispatch) => {
       type: ADD_DOCTORS,
       payload: res.data,
     });
+  });
+};
+
+export const setDoctor = (doctorId) => (dispatch) => {
+  dispatch({
+    type: SET_DOCTOR,
+    payload: doctorId,
   });
 };
 

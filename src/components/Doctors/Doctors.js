@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import axios from '../../base/axios';
+import { useDispatch, useSelector } from 'react-redux';
 import Doctor from './Doctor';
+import { getDoctors } from '../../redux/doctor';
 import './Doctors.css';
 
 function Doctors() {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const [data, setData] = useState([]);
-  const allDoctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
-
+  const doctors = useSelector((state) => state.doctor);
   useEffect(() => {
-    allDoctors();
+    dispatch(getDoctors({ type: 'GET_DOCTORS' }));
   }, []);
 
   if (!user.token) {
     window.location = '/login';
   }
+  
 
   return (
     <div className="doctors-container">
       <div className="doctors-section">
-        {data.map((doctor) => (
+        {doctors.map((doctor) => (
           <Doctor doctor={doctor} key={doctor.id} />
         ))}
       </div>

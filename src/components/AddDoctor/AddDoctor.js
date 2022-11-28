@@ -17,8 +17,8 @@ function AddDoctor() {
     const addDoctor = {
       token: user.token,
       name: e.target[0].value,
-      specialization: e.target[1].value,
-      picture: e.target[2].value,
+      specialty: e.target[1].value,
+      photo: e.target[2].value,
     };
 
     dispatch(addDoctors(addDoctor, { type: 'ADD_DOCTORS' }));

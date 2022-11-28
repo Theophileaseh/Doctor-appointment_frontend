@@ -4,11 +4,13 @@ import { AiOutlineClose } from 'react-icons/ai';
 import axios from '../../base/axios';
 import { addAppointments } from '../../redux/appointment';
 import { hideModal } from '../../redux/appointmentModal';
+// import { getDoctors } from '../../redux/doctor';
 import './AddAppointment.css';
 
 function AddAppointment() {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
   const user = useSelector((state) => state.user);
+  const selectedDoctor = useSelector((state) => state.doctor);
   const [data, setData] = useState([]);
   const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
 
@@ -40,6 +42,9 @@ function AddAppointment() {
     hidesModal();
   };
 
+  console.log('selectedDoc', selectedDoctor);
+  console.log('data', data);
+
   return (
     appointmentModalState.show === true ? (
 
@@ -66,6 +71,11 @@ function AddAppointment() {
             <div className="doctors-date-time">
 
               <select className="select-doctors" required name="doctor" placeholder="Select">
+                { selectedDoctor.length === 1 ? (
+                  <option key={selectedDoctor[0].id} value={selectedDoctor[0].id} selected>
+                    {selectedDoctor[0].name}
+                  </option>
+                ) : '' }
                 {data.map((doctor) => (
                   <option key={doctor.id} value={doctor.id}>
                     {doctor.name}
