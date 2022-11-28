@@ -24,15 +24,15 @@ function Appointment(props) {
   const appointment = props;
   const {
     id, doctor_name: doctorName, doctor_id: doctorId, time_of_appointment: timeOfAppointment,
-    date_of_appointment: dateOfAppointment, description,
+    day_of_appointment: dayOfAppointment, message,
   } = appointment.appointment;
   return (
 
     <tr className="appointments-table-data" key={id}>
       <td className="appointments-row-data">{doctorName}</td>
-      <td className="appointments-row-data">{dateOfAppointment}</td>
+      <td className="appointments-row-data">{dayOfAppointment}</td>
       <td className="appointments-row-data">{new Date(timeOfAppointment).toLocaleTimeString('en-US')}</td>
-      <td className="appointments-row-data">{description}</td>
+      <td className="appointments-row-data">{message}</td>
       <td className="appointments-row-data data-buttons"><button type="button" className="delete-appointment-button" onClick={() => removeAppointment(id, doctorId)}>Delete</button></td>
     </tr>
   );

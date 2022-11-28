@@ -19,9 +19,7 @@ function Appointments() {
     dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
 
-  const appoints = allAppointments.appointments;
-
-  console.log(appoints, allAppointments);
+  console.log('all', allAppointments);
 
   return (
     <div className="my-appointments-container">
@@ -40,7 +38,7 @@ function Appointments() {
             </tr>
           </thead>
           <tbody>
-            {appoints && appoints.map((app) => (
+            {allAppointments && allAppointments.map((app) => (
               <Appointment appointment={app} key={app.id} />
             ))}
           </tbody>
