@@ -35,6 +35,17 @@
   width: max-content;
 }
 
+.auth-options {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-options a {
+  color: #3e3c3c;
+}
+
 @media screen and (max-width: 768px) {
   .sinup-form {
     width: 80%;

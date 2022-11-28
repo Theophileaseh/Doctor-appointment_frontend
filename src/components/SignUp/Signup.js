@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUsers } from '../../redux/user';
 import './Signup.css';
 
@@ -50,6 +50,10 @@ function Signup() {
         <input type="password" className="form-input" name="password" required placeholder="password" />
         <input type="password" className="form-input" name="confirmPassword" required placeholder="confirm password" />
         <button type="submit" className="sigup-submit-btn">Sign Up</button>
+        <div className="auth-options">
+          <Link to="/login">Already have an account? Login</Link>
+          <Link to="/">Home</Link>
+        </div>
       </form>
 
     </div>
