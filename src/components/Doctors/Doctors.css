@@ -23,10 +23,41 @@
   height: 100px;
   width: 100px;
   border-radius: 100%;
+  border: 5px solid #fff;
+}
+
+.doctor-name {
+  font-size: 20px;
+}
+
+.doctor-specialty {
+  font-family: monospace;
+    font-size: 18px;
 }
 
 .doctors-section a {
   text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+  background: grey;
+  padding: 10px;
+  border-radius: 100%;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: 0.5s ease-out;
+}
+
+.social-icon:hover {
+  background: #fff;
+  color: grey;
 }
 
 @media screen and (max-width: 768px) {

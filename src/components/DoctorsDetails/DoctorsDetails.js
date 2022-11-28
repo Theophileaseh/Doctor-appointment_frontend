@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { showModal } from '../../redux/appointmentModal';
 import './DoctorsDetails.css';
 
@@ -31,17 +32,28 @@ function DoctorsDetails() {
         <img src={photo} alt="doctor" className="doctors-main-image" />
       </div>
       <div className="doctors-details">
-        <p className="doctors-name">{name}</p>
+        <div className="doctor-main-details">
+        <p className="doctors-name">Dr. {name}</p>
         <p className="doctors-specialty">
-          Specialty:
-          <span>{specialty}</span>
+          {specialty}
         </p>
         <p className="doctors-specialty">
-          Gender:
-          <span>{bio}</span>
+          {bio}
         </p>
         <button type="button" className="doctors-appointment-button" onClick={setModal}>Add Appointment</button>
       </div>
+      <div className="social-icons">
+          <Link to="facebook.com">
+          <FaFacebookF className="social-icon" />
+          </Link>
+          <Link to="twitter.com">
+          <FaTwitter className="social-icon" />
+          </Link>
+          <Link to="linkedin.com">
+          <FaLinkedinIn className="social-icon" />
+          </Link>
+        </div>
+        </div>
 
     </div>
   );
