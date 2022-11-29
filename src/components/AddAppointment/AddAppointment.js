@@ -4,25 +4,31 @@ import { AiOutlineClose } from 'react-icons/ai';
 import axios from '../../base/axios';
 import { addAppointments } from '../../redux/appointment';
 import { hideModal } from '../../redux/appointmentModal';
-// import { getDoctors } from '../../redux/doctor';
 import './AddAppointment.css';
+import { setDoctor } from '../../redux/setDoctor';
+
 
 function AddAppointment() {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
   const user = useSelector((state) => state.user);
-  const selectedDoctor = useSelector((state) => state.doctor);
-  const [data, setData] = useState([]);
-  const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
+  const doctors = useSelector((state) => state.doctor);
+  const selectedDoctor = useSelector((state) => state.setDoctor);
+  // const [data, setData] = useState([]);
+  // const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
 
-  useEffect(() => {
-    doctors();
-  }, []);
+  // useEffect(() => {
+  //   doctors();
+  // }, []);
 
   const dispatch = useDispatch();
+  const singleDoctor = {};
 
   const hidesModal = () => {
     dispatch(hideModal({ type: 'HIDE_MODAL' }));
+    dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
   };
+
+  console.log(selectedDoctor, 'select');
 
   const newAppointment = (e) => {
     e.preventDefault();
@@ -39,11 +45,12 @@ function AddAppointment() {
     };
 
     dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
+    dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
     hidesModal();
   };
 
   console.log('selectedDoc', selectedDoctor);
-  console.log('data', data);
+  console.log('data', doctors);
 
   return (
     appointmentModalState.show === true ? (
@@ -71,14 +78,14 @@ function AddAppointment() {
             <div className="doctors-date-time">
 
               <select className="select-doctors" required name="doctor" placeholder="Select">
-                { selectedDoctor.length === 1 ? (
-                  <option key={selectedDoctor[0].id} value={selectedDoctor[0].id} selected>
-                    {selectedDoctor[0].name}
+                { selectedDoctor.id ? (
+                  <option key={selectedDoctor.id} value={selectedDoctor.id} selected>
+                    Dr. {selectedDoctor.name}
                   </option>
                 ) : '' }
-                {data.map((doctor) => (
+                {doctors.map((doctor) => (
                   <option key={doctor.id} value={doctor.id}>
-                    {doctor.name}
+                    Dr. {doctor.name}
                   </option>
                 ))}
               </select>

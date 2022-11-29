@@ -37,6 +37,10 @@ function Signup() {
     if (user.role === 'admin' && user.token) {
       navigate('/login');
     }
+
+    if (user.role) {
+      navigate('/login');
+    }
   });
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { FaFacebook, FaPinterestP } from 'react-icons/fa';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
@@ -13,12 +13,15 @@ import './Nav.css';
 function Nav() {
   const dispatch = useDispatch();
 
-  const setModal = () => {
-    dispatch(showModal({ type: 'SHOW_MODAL' }));
-  };
+  const user = useSelector((state) => state.user);
 
   const [sidebar, setSidebar] = useState(false);
   const activeLink = (isActive) => (isActive ? { background: '#98bf0c', color: '#fff' } : undefined);
+
+  const setModal = () => {
+    dispatch(showModal({ type: 'SHOW_MODAL' }));
+    setSidebar(!sidebar);
+  };
 
   const location = useLocation();
 
@@ -29,16 +32,31 @@ function Nav() {
   };
 
   return (
-    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/add-doctor' || location.pathname === '/admin-doctors' ? '' : (
+    location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup' ? '' : (
       <div className={sidebar ? 'navbar active' : 'navbar'}>
         <div className="navbar-menu">
           <div className="navbar-menu-logo">
             <img className="logo" src={logo} alt="logo" />
+            <p className="login-user">
+              Hi, &nbsp;
+              {user.username}
+            </p>
           </div>
           <div className="navbar-main-menu">
-            <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links">Doctors</NavLink>
-            <NavLink className="nav-links" onClick={setModal}>Add Appointment</NavLink>
-            <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links">My Appointments</NavLink>
+            {user.role === 'admin' ? (
+              <>
+                <NavLink to="/admin-doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={() => setSidebar(!sidebar)}>Doctors</NavLink>
+                <NavLink to="/add-doctor" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={() => setSidebar(!sidebar)}>Add Doctor</NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink to="/doctors" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={() => setSidebar(!sidebar)}>Doctors</NavLink>
+                <NavLink className="nav-links" to onClick={setModal}>Add Appointment</NavLink>
+
+                <NavLink to="/appointments" style={({ isActive }) => activeLink(isActive)} className="nav-links" onClick={() => setSidebar(!sidebar)}>My Appointments</NavLink>
+              </>
+            )}
+
             <button type="button" className="sign-out" onClick={signOut}>Log out</button>
           </div>
           <div className="navbar-footer">

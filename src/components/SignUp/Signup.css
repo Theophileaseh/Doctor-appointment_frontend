@@ -42,8 +42,13 @@
   justify-content: center;
 }
 
+.signup-notification {
+  text-align: center;
+    color: #fff;
+}
+
 .auth-options a {
-  color: #3e3c3c;
+  color: #f6f6f6;
 }
 
 @media screen and (max-width: 768px) {

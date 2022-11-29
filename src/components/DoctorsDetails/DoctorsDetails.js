@@ -1,13 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { showModal } from '../../redux/appointmentModal';
 import './DoctorsDetails.css';
-import { setDoctor } from '../../redux/doctor';
+import { setDoctor } from '../../redux/setDoctor';
 
 function DoctorsDetails() {
-  const navigate = useNavigate();
   const { id } = useParams();
   const user = useSelector((state) => state.user);
   const allDoctors = useSelector((state) => state.doctor);
@@ -19,20 +18,15 @@ function DoctorsDetails() {
     name, photo, specialty, bio,
   } = myDoctor[0];
   console.log(myDoctor);
-  const doctorId = id;
+  const singleDoctor = myDoctor[0];
   const setModalDoctor = () => {
     dispatch(showModal({ type: 'SHOW_MODAL' }));
-    dispatch(setDoctor(doctorId, { type: 'SET_DOCTOR' }));
+    dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
   };
 
   if (!user.token) {
     window.location = '/login';
   }
-
-  if (user.role === 'admin' && user.token) {
-    navigate('/admin-doctors');
-  }
-  
 
   return (
     <div className="doctors-details-container">
@@ -51,7 +45,8 @@ function DoctorsDetails() {
           <p className="doctors-specialty">
             {bio}
           </p>
-          <button type="button" className="doctors-appointment-button" onClick={setModalDoctor}>Add Appointment</button>
+          {user.role === 'admin' ? ''
+            : <button type="button" className="doctors-appointment-button" onClick={setModalDoctor}>Add Appointment</button>}
         </div>
         <div className="social-icons">
           <Link to="facebook.com">

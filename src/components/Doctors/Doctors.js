@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Doctor from './Doctor';
 import { getDoctors } from '../../redux/doctor';
@@ -15,7 +15,6 @@ function Doctors() {
   if (!user.token) {
     window.location = '/login';
   }
-  
 
   return (
     <div className="doctors-container">

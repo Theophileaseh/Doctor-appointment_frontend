@@ -11,6 +11,7 @@ const appointmentReducer = (state = [], action) => {
       return action.payload;
 
     case ADD_APPOINTMENTS:
+      console.log(action.payload);
       return { ...state.appointment.push(action.payload) };
 
     case REMOVE_APPOINTMENTS:

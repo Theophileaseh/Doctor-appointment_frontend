@@ -21,7 +21,8 @@
 .doctors-details {
   display: flex;
   flex-direction: column;
-  margin: 40px auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .doctors-name {
@@ -49,6 +50,8 @@
   color: #fff;
   margin: 20px auto;
   cursor: pointer;
+  align-items: center;
+  display: flex;
 }
 
 .doctors-details .social-icon {
