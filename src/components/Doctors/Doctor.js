@@ -21,7 +21,7 @@ function Doctor(props) {
         <div className="doctor-image-name">
           <img src={photo} alt="doctor" className="doctor-image" />
           <p className="doctor-name">
-            Dr.
+            Dr. &nbsp;
             {name}
           </p>
           <p className="doctor-specialty">{specialty}</p>
