@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addDoctors } from '../../redux/doctor';
 import { useNavigate } from 'react-router-dom';
+import { addDoctors } from '../../redux/doctor';
 import '../SignUp/Signup.css';
 import './AddDoctor.css';
 
 function AddDoctor() {
-
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
 
@@ -32,7 +31,6 @@ function AddDoctor() {
   if (!user.token || user.role !== 'admin') {
     window.location = '/login';
   }
-
 
   return (
     <div className="signup-container">

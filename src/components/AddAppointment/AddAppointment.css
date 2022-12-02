@@ -101,7 +101,8 @@
 
 @media screen and (max-width: 768px) {
   .add-appointment-modal {
-    position: relative;
+    position: fixed;
+    overflow-y: auto;
   }
 
   .add-appointment-form {

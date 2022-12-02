@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineClose } from 'react-icons/ai';
-import axios from '../../base/axios';
+import { useNavigate } from 'react-router-dom';
 import { addAppointments } from '../../redux/appointment';
 import { hideModal } from '../../redux/appointmentModal';
-import './AddAppointment.css';
 import { setDoctor } from '../../redux/setDoctor';
-
+import './AddAppointment.css';
 
 function AddAppointment() {
   const appointmentModalState = useSelector((state) => state.appointmentModal);
   const user = useSelector((state) => state.user);
   const doctors = useSelector((state) => state.doctor);
   const selectedDoctor = useSelector((state) => state.setDoctor);
-  // const [data, setData] = useState([]);
-  // const doctors = () => { axios.get('doctors').then((res) => { setData(res.data); }); };
-
-  // useEffect(() => {
-  //   doctors();
-  // }, []);
+  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const singleDoctor = {};
@@ -47,6 +41,7 @@ function AddAppointment() {
     dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
     dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
     hidesModal();
+    // navigate('/appointments');
   };
 
   console.log('selectedDoc', selectedDoctor);
@@ -80,12 +75,16 @@ function AddAppointment() {
               <select className="select-doctors" required name="doctor" placeholder="Select">
                 { selectedDoctor.id ? (
                   <option key={selectedDoctor.id} value={selectedDoctor.id} selected>
-                    Dr. {selectedDoctor.name}
+                    Dr.
+                    {' '}
+                    {selectedDoctor.name}
                   </option>
                 ) : '' }
                 {doctors.map((doctor) => (
                   <option key={doctor.id} value={doctor.id}>
-                    Dr. {doctor.name}
+                    Dr.
+                    {' '}
+                    {doctor.name}
                   </option>
                 ))}
               </select>

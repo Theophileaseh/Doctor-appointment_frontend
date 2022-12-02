@@ -9,9 +9,10 @@ function Home() {
       <div className="home-logo">
         <img src={logo} alt="Doctora" className="doctora-home-logo" />
         <h2 className="doctora-welcome">Welcome To Doctora</h2>
+        <p className="doctora-welcome-info">The Doctor at your service</p>
       </div>
       <div className="doctora-links">
-        <Link to="/login" className="doctora-link">Log In</Link>
+        <Link to="/login" className="doctora-link login-link">Log In</Link>
         <Link to="/signup" className="doctora-link">Sign Up</Link>
       </div>
 

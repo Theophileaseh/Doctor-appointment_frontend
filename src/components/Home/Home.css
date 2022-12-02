@@ -17,6 +17,19 @@
   width: 180px;
 }
 
+.doctora-welcome {
+  font-family: cursive;
+    font-size: 30px;
+    color: grey;
+}
+
+.doctora-welcome-info {
+  
+  font-size: 25px;
+  color: grey;
+
+}
+
 .doctora-links {
   display: flex;
   justify-content: center;
@@ -32,6 +45,18 @@
   padding: 10px;
   border-radius: 20px;
   color: #98bf0c;
+  transition: .5s ease-out;
+}
+
+.login-link {
+  background: #98bf0c;
+  color: #fff;
+}
+
+.login-link:hover {
+  color: #98bf0c !important;
+  border: 2px solid #98bf0c;
+  background: none !important;
 }
 
 .doctora-link:hover {

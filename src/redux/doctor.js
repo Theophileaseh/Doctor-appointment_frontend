@@ -10,7 +10,6 @@ const doctorReducer = (state = [], action) => {
       return action.payload;
 
     case ADD_DOCTORS:
-      console.log(action.payload)
       return { ...state.doctor.push(action.payload) };
 
     default:
