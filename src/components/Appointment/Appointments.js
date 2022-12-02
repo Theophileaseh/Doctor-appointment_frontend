@@ -10,7 +10,6 @@ function Appointments() {
   const user = useSelector((state) => state.user);
 
   const userToken = user.token;
-  console.log(userToken);
 
   if (!user.token) {
     window.location = '/login';
@@ -18,8 +17,6 @@ function Appointments() {
   useEffect(() => {
     dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
-
-  console.log('all', allAppointments);
 
   return (
     <div className="my-appointments-container">
@@ -31,6 +28,7 @@ function Appointments() {
           <thead>
             <tr className="appointments-table-head">
               <th className="appointments-head-data">Doctor</th>
+              <th className="appointments-head-data">Doctor&apos;s Name</th>
               <th className="appointments-head-data">Date</th>
               <th className="appointments-head-data">Time</th>
               <th className="appointments-head-data">Message</th>

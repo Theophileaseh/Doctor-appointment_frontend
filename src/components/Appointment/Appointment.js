@@ -23,12 +23,14 @@ function Appointment(props) {
 
   const appointment = props;
   const {
-    id, doctor_name: doctorName, doctor_id: doctorId, time_of_appointment: timeOfAppointment,
+    id, doctor_photo: doctorPhoto, doctor_name: doctorName, doctor_id: doctorId,
+    time_of_appointment: timeOfAppointment,
     day_of_appointment: dayOfAppointment, message,
   } = appointment.appointment;
   return (
 
     <tr className="appointments-table-data" key={id}>
+      <td className="appointments-row-data"><img src={doctorPhoto} alt={doctorName} className="appointment-doctor-image" /></td>
       <td className="appointments-row-data">{doctorName}</td>
       <td className="appointments-row-data">{dayOfAppointment}</td>
       <td className="appointments-row-data">{new Date(timeOfAppointment).toLocaleTimeString('en-US')}</td>

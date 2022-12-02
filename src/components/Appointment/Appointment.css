@@ -1,3 +1,6 @@
+.my-appointments-container {
+  overflow-y: auto;
+}
 
 .appointments-container {
   background: #fff;
@@ -23,6 +26,11 @@
 .my-appointments-table {
   margin: 0 auto;
   width: 100%;
+}
+
+.appointment-doctor-image {
+  width: 50px;
+  border-radius: 100%;
 }
 
 .delete-appointment-button {

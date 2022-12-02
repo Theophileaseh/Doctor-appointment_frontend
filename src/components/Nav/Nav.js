@@ -82,7 +82,7 @@ function Nav() {
                 &copy; &nbsp;
                 {new Date().getFullYear()}
                 {' '}
-                The Team
+                - All Rights Reserved - Doctora
               </p>
             </div>
 

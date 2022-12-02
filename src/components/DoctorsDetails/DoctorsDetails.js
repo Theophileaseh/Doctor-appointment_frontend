@@ -17,7 +17,6 @@ function DoctorsDetails() {
   const {
     name, photo, specialty, bio,
   } = myDoctor[0];
-  console.log(myDoctor);
   const singleDoctor = myDoctor[0];
   const setModalDoctor = () => {
     dispatch(showModal({ type: 'SHOW_MODAL' }));

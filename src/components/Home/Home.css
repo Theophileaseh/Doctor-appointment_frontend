@@ -19,15 +19,13 @@
 
 .doctora-welcome {
   font-family: cursive;
-    font-size: 30px;
-    color: grey;
+  font-size: 30px;
+  color: grey;
 }
 
 .doctora-welcome-info {
-  
   font-size: 25px;
   color: grey;
-
 }
 
 .doctora-links {
@@ -45,7 +43,7 @@
   padding: 10px;
   border-radius: 20px;
   color: #98bf0c;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .login-link {
