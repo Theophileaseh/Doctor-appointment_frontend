@@ -6,6 +6,13 @@
   background: #fff;
 }
 
+.no-appointments {
+  text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    margin: 20% auto;
+}
+
 .my-appointments-head {
   text-align: center;
   width: 90%;

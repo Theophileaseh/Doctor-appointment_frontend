@@ -22,8 +22,6 @@ function AddAppointment() {
     dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
   };
 
-  console.log(selectedDoctor, 'select');
-
   const newAppointment = (e) => {
     e.preventDefault();
 
@@ -43,9 +41,6 @@ function AddAppointment() {
     hidesModal();
     // navigate('/appointments');
   };
-
-  console.log('selectedDoc', selectedDoctor);
-  console.log('data', doctors);
 
   return (
     appointmentModalState.show === true ? (
