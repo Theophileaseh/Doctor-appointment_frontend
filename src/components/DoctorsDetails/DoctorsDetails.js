@@ -41,7 +41,7 @@ function DoctorsDetails() {
           <p className="doctors-specialty">
             {specialty}
           </p>
-          <p className="doctors-specialty">
+          <p className="doctors-desc">
             {bio}
           </p>
           {user.role === 'admin' ? ''

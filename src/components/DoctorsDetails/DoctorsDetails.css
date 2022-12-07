@@ -33,8 +33,13 @@
 }
 
 .doctors-specialty {
-  font-size: 20px;
+  font-size: 28px;
   color: grey;
+  font-family: maghrib;
+}
+
+.doctors-desc {
+  color: #3a3838;
 }
 
 .doctors-details span {

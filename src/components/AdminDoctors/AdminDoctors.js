@@ -12,7 +12,7 @@ function AdminDoctors() {
     dispatch(getDoctors({ type: 'GET_DOCTORS' }));
   });
 
-  if (!user.token) {
+  if (!user.token || user.role !== 'admin') {
     window.location = '/login';
   }
 

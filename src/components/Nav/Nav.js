@@ -6,7 +6,6 @@ import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import { NavLink, useLocation } from 'react-router-dom';
 import { showModal } from '../../redux/appointmentModal';
-import { loginusers } from '../../redux/user';
 import logo from '../../assets/doctora.png';
 import './Nav.css';
 
@@ -26,7 +25,6 @@ function Nav() {
   const location = useLocation();
 
   const signOut = () => {
-    dispatch(loginusers([]));
     localStorage.clear();
     window.location = '/login';
   };

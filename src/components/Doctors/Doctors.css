@@ -33,8 +33,10 @@
 
 .doctor-specialty {
   font-family: monospace;
-  font-size: 18px;
+  font-size: 25px;
   color: #d2d0d0;
+  font-family: maghrib;
+  text-align: center;
 }
 
 .doctors-section a {
