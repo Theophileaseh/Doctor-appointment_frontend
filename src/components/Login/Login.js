@@ -35,7 +35,7 @@ function Login() {
       <form className="sinup-form" onSubmit={authUsers}>
         {user.role && !user.token ? <p className="signup-notification">Sign Up Successful. You can now Login</p> : ''}
         <h2>Login</h2>
-        <input type="email" className="form-input" name="name" required placeholder="email" />
+        <input type="email" className="form-input" name="email" required placeholder="email" />
         <input type="password" className="form-input" name="password" required placeholder="password" />
         <button type="submit" className="sigup-submit-btn">Log in</button>
         <div className="auth-options">
