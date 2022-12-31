@@ -12,7 +12,7 @@ function AddAppointment() {
   const user = useSelector((state) => state.user);
   const doctors = useSelector((state) => state.doctor);
   const selectedDoctor = useSelector((state) => state.setDoctor);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const singleDoctor = {};
@@ -39,7 +39,7 @@ function AddAppointment() {
     dispatch(addAppointments(addsAppointments, { type: 'ADD_APPOINTMENTS' }));
     dispatch(setDoctor(singleDoctor, { type: 'SET_DOCTOR' }));
     hidesModal();
-    // navigate('/appointments');
+    navigate('/appointments');
   };
 
   return (

@@ -35,7 +35,7 @@
 .doctors-specialty {
   font-size: 28px;
   color: grey;
-  font-family: maghrib;
+  font-family: 'maghrib', monospace;
 }
 
 .doctors-desc {
