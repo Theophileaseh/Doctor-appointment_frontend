@@ -119,6 +119,10 @@
   text-align: center;
 }
 
+.copyright a {
+  color: #5c5959;
+}
+
 .sign-out {
   text-align: center;
   margin: 0 auto;

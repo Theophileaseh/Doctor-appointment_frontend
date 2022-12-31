@@ -80,7 +80,7 @@ function Nav() {
                 &copy; &nbsp;
                 {new Date().getFullYear()}
                 {' '}
-                - All Rights Reserved - Doctora
+                - All Rights Reserved - <a href="https://nwachan-theophile.netlify.app">NT</a>
               </p>
             </div>
 
