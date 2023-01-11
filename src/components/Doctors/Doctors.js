@@ -10,7 +10,7 @@ function Doctors() {
   const doctors = useSelector((state) => state.doctor);
   useEffect(() => {
     dispatch(getDoctors({ type: 'GET_DOCTORS' }));
-  }, [dispatch]);
+  });
 
   if (!user.token) {
     window.location = '/login';

@@ -41,12 +41,17 @@
 }
 
 .delete-appointment-button {
-  border: none;
-  background: #cd1515;
-  color: #fff;
+  color: #cd1515;
   border-radius: 3px;
   padding: 5px;
   cursor: pointer;
+  border: 1px solid #cd1515;
+  transition: .5s ease-out;
+}
+
+.delete-appointment-button:hover {
+  color: #fff;
+  background: #cd1515;
 }
 
 .appointments-table-head {
