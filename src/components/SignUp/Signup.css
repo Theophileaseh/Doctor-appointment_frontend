@@ -33,6 +33,23 @@
   border: none;
   color: #637c07;
   width: max-content;
+  cursor: pointer;
+}
+
+.auth-options {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-notification {
+  text-align: center;
+  color: #fff;
+}
+
+.auth-options a {
+  color: #f6f6f6;
 }
 
 @media screen and (max-width: 768px) {

@@ -9,38 +9,46 @@ function Appointments() {
   const allAppointments = useSelector((state) => state.appointment);
   const user = useSelector((state) => state.user);
 
-  const appoints = allAppointments.appointments;
+  const userToken = user.token;
 
   if (!user.token) {
     window.location = '/login';
   }
   useEffect(() => {
-    dispatch(getAppointments({ type: 'GET_APPOINTMENTS' }));
+    dispatch(getAppointments(userToken, { type: 'GET_APPOINTMENTS' }));
   });
 
   return (
+
     <div className="my-appointments-container">
       <div className="my-appointments-head">
         <h2 className="appointments-heading">Your Appointments</h2>
       </div>
       <div className="my-appointments-main">
-        <table className="my-appointments-table">
-          <thead>
-            <tr className="appointments-table-head">
-              <th className="appointments-head-data">Doctor</th>
-              <th className="appointments-head-data">Date</th>
-              <th className="appointments-head-data">Time</th>
-              <th className="appointments-head-data">Message</th>
-              <th className="appointments-head-data">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {appoints.map((app) => (
-              <Appointment appointment={app} key={app.id} />
-            ))}
-          </tbody>
+        { allAppointments.length === 0
 
-        </table>
+          ? <h4 className="no-appointments">You have no appointments</h4>
+
+          : (
+            <table className="my-appointments-table">
+              <thead>
+                <tr className="appointments-table-head">
+                  <th className="appointments-head-data">Doctor</th>
+                  <th className="appointments-head-data">Doctor&apos;s Name</th>
+                  <th className="appointments-head-data">Date</th>
+                  <th className="appointments-head-data">Time</th>
+                  <th className="appointments-head-data">Message</th>
+                  <th className="appointments-head-data">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allAppointments && allAppointments.map((app) => (
+                  <Appointment appointment={app} key={app.id} />
+                ))}
+              </tbody>
+
+            </table>
+          )}
       </div>
     </div>
   );

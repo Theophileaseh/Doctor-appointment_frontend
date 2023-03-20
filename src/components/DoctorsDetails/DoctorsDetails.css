@@ -21,18 +21,25 @@
 .doctors-details {
   display: flex;
   flex-direction: column;
-  margin: 40px auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .doctors-name {
   font-size: 20px;
   color: #98bf0c;
   font-weight: 700;
+  font-family: cursive;
 }
 
 .doctors-specialty {
-  font-size: 20px;
+  font-size: 28px;
   color: grey;
+  font-family: 'maghrib', monospace;
+}
+
+.doctors-desc {
+  color: #3a3838;
 }
 
 .doctors-details span {
@@ -47,6 +54,23 @@
   border-radius: 3px;
   color: #fff;
   margin: 20px auto;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+}
+
+.doctors-details .social-icon {
+  background: #fff;
+  padding: 10px;
+  border-radius: 100%;
+  color: #98bf0c;
+  border: 1px solid #98bf0c;
+  transition: 0.5s ease-out;
+}
+
+.doctors-details .social-icon:hover {
+  background: #98bf0c;
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {

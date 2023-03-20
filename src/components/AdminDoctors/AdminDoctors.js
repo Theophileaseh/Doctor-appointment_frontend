@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Doctor from './Doctor';
+import Doctor from '../Doctors/Doctor';
 import { getDoctors } from '../../redux/doctor';
-import './Doctors.css';
+import '../Doctors/Doctors.css';
 
-function Doctors() {
+function AdminDoctors() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const doctors = useSelector((state) => state.doctor);
   useEffect(() => {
     dispatch(getDoctors({ type: 'GET_DOCTORS' }));
-  }, [dispatch]);
+  });
 
-  if (!user.token) {
+  if (!user.token || user.role !== 'admin') {
     window.location = '/login';
   }
 
@@ -27,4 +27,4 @@ function Doctors() {
   );
 }
 
-export default Doctors;
+export default AdminDoctors;

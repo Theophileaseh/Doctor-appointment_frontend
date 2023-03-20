@@ -2,7 +2,7 @@
 .add-appointment-modal {
   background: #98bf0c;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   top: 0;
 }
@@ -31,6 +31,11 @@
   color: #fff;
   font-size: 20px;
   font-family: cursive;
+}
+
+.appointment-info span {
+  color: #3e3c38;
+  font-weight: 700;
 }
 
 .add-appointment-section {
@@ -95,10 +100,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  add-appointment-modal {
-    position: relative;
+  .add-appointment-modal {
+    position: fixed;
+    overflow-y: auto;
   }
-  
+
   .add-appointment-form {
     flex-direction: column;
   }
