@@ -34,6 +34,7 @@
   color: #637c07;
   width: max-content;
   cursor: pointer;
+  outline: none;
 }
 
 .auth-options {

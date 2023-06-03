@@ -42,11 +42,12 @@
 
 .delete-appointment-button {
   color: #cd1515;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 5px;
   cursor: pointer;
   border: 1px solid #cd1515;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
+  outline: none;
 }
 
 .delete-appointment-button:hover {

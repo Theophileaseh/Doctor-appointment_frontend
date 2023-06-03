@@ -19,6 +19,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .modal-close-icon {
@@ -83,6 +84,7 @@
   color: #fff;
   cursor: pointer;
   width: max-content;
+  outline: none;
 }
 
 .city-input {

@@ -57,6 +57,7 @@
   cursor: pointer;
   align-items: center;
   display: flex;
+  outline: none;
 }
 
 .doctors-details .social-icon {

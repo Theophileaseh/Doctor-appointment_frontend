@@ -30,7 +30,7 @@ function DoctorsDetails() {
   return (
     <div className="doctors-details-container">
       <div className="doctors-image">
-        <img src={photo} alt="doctor" className="doctors-main-image" />
+        <img src={photo} alt={name} className="doctors-main-image" />
       </div>
       <div className="doctors-details">
         <div className="doctor-main-details">
